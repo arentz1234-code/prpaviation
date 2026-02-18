@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollProgress();
     initNavigation();
     initParticles();
-    initCustomCursor();
     initScrollEffects();
     initCounterAnimation();
     initFormHandling();
@@ -138,53 +137,6 @@ function initParticles() {
         particle.style.height = particle.style.width;
         particlesContainer.appendChild(particle);
     }
-}
-
-// ==================== CUSTOM CURSOR ====================
-function initCustomCursor() {
-    // Only on desktop
-    if (window.innerWidth <= 992) return;
-
-    const cursor = document.createElement('div');
-    cursor.className = 'cursor';
-    document.body.appendChild(cursor);
-
-    const follower = document.createElement('div');
-    follower.className = 'cursor-follower';
-    document.body.appendChild(follower);
-
-    let mouseX = 0, mouseY = 0;
-    let cursorX = 0, cursorY = 0;
-    let followerX = 0, followerY = 0;
-
-    document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-    });
-
-    function animateCursor() {
-        // Smooth cursor movement
-        cursorX += (mouseX - cursorX) * 0.2;
-        cursorY += (mouseY - cursorY) * 0.2;
-        cursor.style.left = cursorX + 'px';
-        cursor.style.top = cursorY + 'px';
-
-        // Slower follower
-        followerX += (mouseX - followerX) * 0.1;
-        followerY += (mouseY - followerY) * 0.1;
-        follower.style.left = followerX + 'px';
-        follower.style.top = followerY + 'px';
-
-        requestAnimationFrame(animateCursor);
-    }
-    animateCursor();
-
-    // Hover effects
-    const hoverElements = document.querySelectorAll('a, button, .btn, .service-card, .aircraft-card');
-    hoverElements.forEach(el => {
-        el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-        el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
-    });
 }
 
 // ==================== SCROLL EFFECTS ====================
