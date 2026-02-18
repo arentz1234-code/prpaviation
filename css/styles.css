@@ -990,9 +990,10 @@ a:hover {
 .fleet-track {
     display: flex;
     gap: 2rem;
-    animation: scroll-fleet 20s linear infinite;
+    animation: scroll-fleet 30s linear infinite;
     width: max-content;
     padding: 1rem 0;
+    will-change: transform;
 }
 
 .fleet-track:hover {
