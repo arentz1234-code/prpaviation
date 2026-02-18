@@ -243,39 +243,165 @@
     </section>
 
     <!-- Charter Introduction -->
-    <section class="services" style="padding-top: 6rem;">
+    <section class="charter-intro">
         <div class="container">
-            <div class="about-grid">
-                <div class="about-content reveal">
+            <div class="charter-intro-grid">
+                <div class="charter-intro-content reveal">
+                    <span class="subtitle">Private Air Travel</span>
                     <h2>Fly on Your Schedule</h2>
-                    <p>Experience the freedom and convenience of private air travel with PRP Aviation's charter services. Skip the long lines, avoid crowded terminals, and arrive at your destination refreshed and ready.</p>
+                    <p class="lead">Experience the freedom and convenience of private air travel with PRP Aviation's charter services. Skip the long lines, avoid crowded terminals, and arrive at your destination refreshed and ready.</p>
                     <p>Our premium Cirrus fleet offers the perfect balance of performance, safety, and comfort. Whether you're traveling for business or pleasure, our experienced pilots and dedicated team ensure every flight exceeds your expectations.</p>
-
-                    <ul class="quote-features" style="margin-top: 2rem;">
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            Depart when you're ready, not when the airline says
-                        </li>
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            Access to thousands of airports closer to your destination
-                        </li>
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            Complete privacy for business discussions
-                        </li>
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            No security lines or baggage restrictions
-                        </li>
-                    </ul>
+                    <a href="../index.html#quote" class="btn btn-primary btn-large">Get Your Quote</a>
                 </div>
-                <div class="about-image reveal">
-                    <img src="../images/charter-hero.jpg" alt="Charter Flight Experience">
+                <div class="charter-benefits reveal">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <div class="benefit-text">
+                            <h4>Your Schedule</h4>
+                            <p>Depart when you're ready, not when the airline says</p>
+                        </div>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div class="benefit-text">
+                            <h4>5,000+ Airports</h4>
+                            <p>Access airports closer to your final destination</p>
+                        </div>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                        </div>
+                        <div class="benefit-text">
+                            <h4>Complete Privacy</h4>
+                            <p>Confidential space for business discussions</p>
+                        </div>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                        </div>
+                        <div class="benefit-text">
+                            <h4>No Hassle</h4>
+                            <p>Skip security lines and baggage restrictions</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+    <style>
+        .charter-intro {
+            padding: 6rem 0;
+            background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+        }
+        .charter-intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .charter-intro-content .subtitle {
+            color: var(--copper);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .charter-intro-content h2 {
+            font-size: 3rem;
+            color: var(--silver-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        .charter-intro-content .lead {
+            font-size: 1.15rem;
+            color: var(--text-gray);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .charter-intro-content p {
+            color: var(--text-gray);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        .charter-benefits {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        .benefit-card {
+            background: white;
+            padding: 1.75rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+        }
+        .benefit-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-copper);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        .benefit-icon svg {
+            width: 24px;
+            height: 24px;
+            color: white;
+        }
+        .benefit-text h4 {
+            font-size: 1.1rem;
+            color: var(--silver-light);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .benefit-text p {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            line-height: 1.5;
+            margin: 0;
+        }
+        @media (max-width: 992px) {
+            .charter-intro-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .charter-intro-content h2 {
+                font-size: 2.25rem;
+            }
+        }
+        @media (max-width: 576px) {
+            .charter-benefits {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 
     <!-- Interactive Range Map -->
     <section class="range-map-section">
