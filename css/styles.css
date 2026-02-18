@@ -1745,14 +1745,14 @@ a:hover {
 
 .contact-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
 }
 
 .contact-card {
     background: var(--white);
     border-radius: 20px;
-    padding: 3rem 2rem;
+    padding: 2.5rem 1.5rem;
     text-align: center;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 5px 30px rgba(0,0,0,0.06);
@@ -1816,13 +1816,26 @@ a:hover {
 }
 
 .contact-card p {
-    margin-bottom: 0.5rem;
-    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-gray);
 }
 
-.contact-card a {
-    font-size: 1.15rem;
+.contact-card a,
+.contact-card .contact-link {
+    display: inline-block;
+    font-size: 0.95rem;
     font-weight: 600;
+    color: var(--copper);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.contact-card a:hover,
+.contact-card .contact-link:hover {
+    color: var(--copper-dark);
+    transform: translateX(3px);
 }
 
 /* ==================== FOOTER ==================== */
@@ -2275,7 +2288,13 @@ a:hover {
     }
 
     .contact-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 600px) {
+        .contact-grid {
+            grid-template-columns: 1fr;
+        }
     }
 
     .fleet-grid {
