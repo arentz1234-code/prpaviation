@@ -963,6 +963,7 @@ a:hover {
     overflow: hidden;
     padding: 2rem 0 4rem;
     position: relative;
+    min-height: 500px;
 }
 
 .fleet-carousel::before,
@@ -1011,6 +1012,7 @@ a:hover {
 .carousel-card {
     flex: 0 0 450px;
     min-width: 450px;
+    min-height: 420px;
     background: var(--white);
     border-radius: 20px;
     overflow: hidden;
