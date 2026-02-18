@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PRP Aviation Fleet - Explore our premium Cirrus aircraft including SR-22, Vision Jet, and Epic E1000.">
+    <title>Our Fleet | PRP Aviation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .fleet-detail {
+            padding: 6rem 0;
+            border-bottom: 1px solid rgba(184, 115, 51, 0.2);
+        }
+        .fleet-detail:nth-child(even) {
+            background: var(--dark-gray);
+        }
+        .fleet-detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .fleet-detail:nth-child(even) .fleet-detail-grid {
+            direction: rtl;
+        }
+        .fleet-detail:nth-child(even) .fleet-detail-grid > * {
+            direction: ltr;
+        }
+        .fleet-media {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        .fleet-media img,
+        .fleet-media video {
+            width: 100%;
+            border-radius: 16px;
+        }
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-copper);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        .play-button:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+        .play-button svg {
+            width: 30px;
+            height: 30px;
+            fill: white;
+            margin-left: 5px;
+        }
+        .fleet-specs-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .fleet-spec-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem;
+            background: rgba(184, 115, 51, 0.1);
+            border-radius: 8px;
+            border-left: 3px solid var(--copper);
+        }
+        .fleet-spec-item .label {
+            color: var(--text-gray);
+        }
+        .fleet-spec-item .value {
+            color: var(--copper-light);
+            font-weight: 600;
+        }
+        @media (max-width: 992px) {
+            .fleet-detail-grid {
+                grid-template-columns: 1fr;
+            }
+            .fleet-detail:nth-child(even) .fleet-detail-grid {
+                direction: ltr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <img src="../images/prp-logo.png" alt="PRP Aviation">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-link">Services</a>
+                    <div class="dropdown-menu">
+                        <a href="charter.html">Charter Flights</a>
+                        <a href="flight-school.html">Flight School</a>
+                        <a href="maintenance.html">Aircraft Maintenance</a>
+                        <a href="avionics.html">Avionics Repair</a>
+                        <a href="rental.html">Aircraft Rental</a>
+                    </div>
+                </li>
+                <li><a href="fleet.html" class="nav-link">Our Fleet</a></li>
+                <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="team.html" class="nav-link">Our Team</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="../index.html#quote" class="btn btn-primary">Get a Quote</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Fleet</h1>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span>Our Fleet</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fleet Introduction -->
+    <section class="services" style="padding-top: 4rem; padding-bottom: 2rem;">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Premium Aircraft for Every Mission</h2>
+                <p>Our fleet of meticulously maintained Cirrus aircraft represents the pinnacle of general aviation technology, safety, and comfort.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cirrus SR-22 G6 -->
+    <section class="fleet-detail" id="sr22">
+        <div class="container">
+            <div class="fleet-detail-grid">
+                <div class="fleet-media reveal">
+                    <img src="../images/sr22-g6.png" alt="Cirrus SR-22 G6 N528M">
+                </div>
+                <div class="fleet-content reveal">
+                    <h2>Cirrus SR-22 G6</h2>
+                    <p>The world's best-selling high-performance single-engine aircraft for over a decade. The SR-22 combines speed, efficiency, and advanced safety features including the revolutionary Cirrus Airframe Parachute System (CAPS), which has no failures when used within its operating range.</p>
+                    <p>Our SR-22 G6 (N528M) features Garmin Perspective+ avionics, air conditioning, and Flight Into Known Icing (FIKI) capability. Enjoy an intuitive glass cockpit experience with synthetic vision, traffic awareness, and advanced navigation.</p>
+
+                    <div class="fleet-specs-grid">
+                        <div class="fleet-spec-item">
+                            <span class="label">Cruise Speed</span>
+                            <span class="value">183 knots</span>
+                        </div>
+                        <div class="fleet-spec-item">
+                            <span class="label">Range</span>
+                            <span class="value">1,000+ NM</span>
+                        </div>
+                        <div class="fleet-spec-item">
+                            <span class="label">Passengers</span>
+                            <span class="value">4 (+ pilot)</span>
+                        </div>
+                        <div class="fleet-spec-item">
+                            <span class="label">Useful Load</span>
+                            <span class="value">1,100 lbs</span>
+                        </div>
+                        <div class="fleet-spec-item">
+                            <span class="label">Engine</span>
+                            <span class="value">Continental IO-550N</span>
+                        </div>
+                        <div class="fleet-spec-item">
+                            <span class="label">Horsepower</span>
+                            <span class="value">310 HP</span>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 2rem;">
+                        <a href="../index.html#quote" class="btn btn-primary">Request Quote</a>
+                        <a href="rental.html" class="btn btn-secondary" style="margin-left: 1rem;">Rental Info</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cirrus Vision Jet -->
+    <section class="fleet-detail" id="visionjet">
+        <div class="container">
+            <div class="fleet-detail-grid">
+                <div class="fleet-media reveal">
+                    <img src="../images/vision-jet.jpg" alt="Cirrus Vision Jet SF50 N678SF">
+                </div>
+                <div class="fleet-content reveal">
+                    <h2>Cirrus Vision Jet SF50</h2>
+                    <p>The world's first single-engine personal jet. The Vision Jet redefines personal aviation with jet performance, a spacious cabin, and the same commitment to safety that defines Cirrus aircraft.</p>
+                    <p>Featuring the Garmin G3000 avionics suite, Safe Return emergency autoland system, and the proven CAPS parachute, the Vision Jet delivers an unparalleled ownership and charter experience.</p>
+
+                    <div class="fleet-specs-grid">
+                        <div class="fleet-spec-item">
+                            <span class="label">Max Cruise Speed</span>
+                            <span class="value">311 knots</span>
+                        </div>
+                        <div class="fleet-spec-item">
+                            <span class="label">Range</span>
+                            <span class="value">1,200+ NM</span>
+                        </div>
+                        <div class="fleet-spec-item">
+                            <span class="label">Passengers</span>
+                            <span class="value">5 (+ pilot)</span>
+                        </div>
+                        <div class="fleet-spec-item">
+                            <span class="label">Max Altitude</span>
+                            <span class="value">31,000 ft</span>
+                        </div>
+                        <div class="fleet-spec-item">
+                            <span class="label">Engine</span>
+                            <span class="value">Williams FJ33-5A</span>
+                        </div>
+                        <div class="fleet-spec-item">
+                            <span class="label">Thrust</span>
+                            <span class="value">1,846 lbs</span>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 2rem;">
+                        <a href="../index.html#quote" class="btn btn-primary">Request Quote</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Epic E1000 -->
+    <section class="fleet-detail" id="epic">
+        <div class="container">
+            <div class="fleet-detail-grid">
+                <div class="fleet-media reveal">
+                    <img src="../images/epic-e1000.jpg" alt="Epic E1000 GX N278TF">
+                    <div class="play-button" onclick="openVideoModal('../images/epic-video.mp4')">
+                        <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                    </div>
+                </div>
+                <div class="fleet-content reveal">
+                    <h2>Epic E1000 GX</h2>
+                    <p>The fastest single-engine turboprop in production. The Epic E1000 combines carbon fiber construction with a powerful PT6 engine to deliver jet-like performance with turboprop efficiency.</p>
+                    <p>The pressurized cabin seats up to six passengers in comfort, while the Garmin G1000 NXi avionics provide pilots with comprehensive flight information and automation.</p>
+
+                    <div class="fleet-specs-grid">
+                        <div class="fleet-spec-item">
+                            <span class="label">Max Cruise Speed</span>
+                            <span class="value">333 knots</span>
+                        </div>
+                        <div class="fleet-spec-item">
+                            <span class="label">Range</span>
+                            <span class="value">1,650 NM</span>
+                        </div>
+                        <div class="fleet-spec-item">
+                            <span class="label">Passengers</span>
+                            <span class="value">6 (+ pilot)</span>
+                        </div>
+                        <div class="fleet-spec-item">
+                            <span class="label">Max Altitude</span>
+                            <span class="value">34,000 ft</span>
+                        </div>
+                        <div class="fleet-spec-item">
+                            <span class="label">Engine</span>
+                            <span class="value">P&W PT6A-67A</span>
+                        </div>
+                        <div class="fleet-spec-item">
+                            <span class="label">Horsepower</span>
+                            <span class="value">1,200 SHP</span>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 2rem;">
+                        <a href="../index.html#quote" class="btn btn-primary">Request Quote</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety Features -->
+    <section class="services">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Safety First</h2>
+                <p>Every aircraft in our fleet is equipped with advanced safety features.</p>
+            </div>
+
+            <div class="services-grid" style="grid-template-columns: repeat(4, 1fr);">
+                <div class="service-card reveal" style="text-align: center;">
+                    <div class="service-icon" style="margin: 0 auto 1rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <h3>CAPS</h3>
+                    <p>Cirrus Airframe Parachute System - whole aircraft recovery</p>
+                </div>
+                <div class="service-card reveal" style="text-align: center;">
+                    <div class="service-icon" style="margin: 0 auto 1rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <h3>Synthetic Vision</h3>
+                    <p>3D terrain and obstacle awareness</p>
+                </div>
+                <div class="service-card reveal" style="text-align: center;">
+                    <div class="service-icon" style="margin: 0 auto 1rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                    </div>
+                    <h3>Safe Return</h3>
+                    <p>Emergency autoland (Vision Jet)</p>
+                </div>
+                <div class="service-card reveal" style="text-align: center;">
+                    <div class="service-icon" style="margin: 0 auto 1rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="2"></circle>
+                            <path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"></path>
+                        </svg>
+                    </div>
+                    <h3>Traffic & Weather</h3>
+                    <p>ADS-B In traffic and weather displays</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="quote-section">
+        <div class="container">
+            <div class="section-header reveal" style="margin-bottom: 2rem;">
+                <h2>Experience Our Fleet</h2>
+                <p>Ready to fly? Request a quote or schedule a tour of our aircraft.</p>
+                <a href="../index.html#quote" class="btn btn-primary btn-large" style="margin-top: 2rem;">Request a Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="../images/prp-logo.png" alt="PRP Aviation">
+                    <p>Personal. Reliable. Professional. Your trusted partner for all aviation services.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="charter.html">Charter Flights</a></li>
+                        <li><a href="flight-school.html">Flight School</a></li>
+                        <li><a href="maintenance.html">Aircraft Maintenance</a></li>
+                        <li><a href="avionics.html">Avionics Repair</a></li>
+                        <li><a href="rental.html">Aircraft Rental</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="fleet.html">Our Fleet</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-info-bar">
+                <span>KOCF - Ocala, FL</span>
+                <span class="divider">|</span>
+                <span>KPIE - Clearwater, FL</span>
+                <span class="divider">|</span>
+                <span><a href="tel:+13525177075">(352) 517-7075</a></span>
+                <span class="divider">|</span>
+                <span><a href="mailto:customerservice@prpaviation.com">customerservice@prpaviation.com</a></span>
+                <span class="divider">|</span>
+                <span>Mon-Fri 8am-4:30pm | Sat-Sun By Appt</span>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PRP Aviation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

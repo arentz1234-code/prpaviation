@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PRP Aviation Flight School - Learn to fly with expert instructors on premium Cirrus aircraft. Private pilot to advanced certifications.">
+    <title>Flight School | PRP Aviation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        /* Interactive Hexagon Roadmap Styles */
+        .training-roadmap {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .training-roadmap::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23b87333' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .roadmap-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .roadmap-header h2 {
+            color: #fff;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .roadmap-header p {
+            color: rgba(255,255,255,0.7);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .roadmap-instructions {
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .roadmap-instructions span {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(184, 115, 51, 0.2);
+            border: 1px solid rgba(184, 115, 51, 0.4);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            color: var(--copper-light);
+            font-size: 0.9rem;
+        }
+
+        .hexagon-container {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .phase-section {
+            margin-bottom: 4rem;
+        }
+
+        .phase-title {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .phase-number {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-copper);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .phase-title h3 {
+            color: #fff;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .phase-title span {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+        }
+
+        .hexagon-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .hexagon {
+            width: 140px;
+            height: 160px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .hexagon:hover {
+            transform: translateY(-10px) scale(1.05);
+            z-index: 10;
+        }
+
+        .hexagon-inner {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(79, 128, 166, 0.8) 0%, rgba(59, 98, 128, 0.9) 100%);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+            position: relative;
+        }
+
+        .hexagon:hover .hexagon-inner {
+            background: linear-gradient(180deg, rgba(184, 115, 51, 0.9) 0%, rgba(139, 90, 43, 0.95) 100%);
+            box-shadow: 0 20px 40px rgba(184, 115, 51, 0.3);
+        }
+
+        .hexagon-inner::before {
+            content: '';
+            position: absolute;
+            inset: 3px;
+            background: linear-gradient(180deg, rgba(79, 128, 166, 0.6) 0%, rgba(59, 98, 128, 0.7) 100%);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            z-index: -1;
+            transition: all 0.4s ease;
+        }
+
+        .hexagon:hover .hexagon-inner::before {
+            background: linear-gradient(180deg, rgba(184, 115, 51, 0.7) 0%, rgba(139, 90, 43, 0.8) 100%);
+        }
+
+        .hexagon-content {
+            color: #fff;
+            font-size: 0.8rem;
+            font-weight: 600;
+            line-height: 1.3;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .hexagon.milestone .hexagon-inner {
+            background: linear-gradient(180deg, rgba(184, 115, 51, 0.9) 0%, rgba(139, 90, 43, 0.95) 100%);
+        }
+
+        .hexagon.milestone .hexagon-inner::before {
+            background: linear-gradient(180deg, rgba(184, 115, 51, 0.7) 0%, rgba(139, 90, 43, 0.8) 100%);
+        }
+
+        .hexagon.milestone .hexagon-content {
+            font-size: 0.9rem;
+        }
+
+        /* Tooltip */
+        .hexagon-tooltip {
+            position: absolute;
+            bottom: calc(100% + 15px);
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background: #fff;
+            color: var(--silver-light);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            min-width: 250px;
+            z-index: 100;
+            pointer-events: none;
+        }
+
+        .hexagon-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 10px solid transparent;
+            border-top-color: #fff;
+        }
+
+        .hexagon:hover .hexagon-tooltip {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .hexagon-tooltip h4 {
+            color: var(--copper);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hexagon-tooltip p {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Final Goal Hexagon */
+        .hexagon.final-goal {
+            width: 180px;
+            height: 200px;
+        }
+
+        .hexagon.final-goal .hexagon-inner {
+            background: linear-gradient(180deg, rgba(255, 215, 0, 0.9) 0%, rgba(184, 115, 51, 0.95) 100%);
+        }
+
+        .hexagon.final-goal .hexagon-content {
+            font-size: 1rem;
+        }
+
+        /* Training Offerings Section */
+        .training-offerings {
+            padding: 6rem 0;
+            background: var(--white);
+        }
+
+        .offerings-container {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+        }
+
+        .offering-card {
+            display: flex;
+            flex-direction: row;
+            gap: 3rem;
+            align-items: stretch;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, #a8c4d4 0%, #8fb3c9 100%);
+            border-radius: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .offering-card.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .offering-image {
+            flex: 0 0 350px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            min-height: 300px;
+            background: linear-gradient(135deg, #5a7a8a 0%, #4a6a7a 100%);
+            position: relative;
+        }
+
+        .offering-image img {
+            width: 100%;
+            height: 100%;
+            min-height: 300px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .offering-card:hover .offering-image img {
+            transform: scale(1.05);
+        }
+
+        .offering-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .offering-content h3 {
+            color: var(--silver-light);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .offering-content > p {
+            color: var(--silver-light);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .offering-aircraft {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .aircraft-badge {
+            background: rgba(255,255,255,0.95);
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            font-weight: 600;
+            color: var(--copper);
+            font-size: 0.9rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            white-space: nowrap;
+        }
+
+        .requirements-list {
+            background: rgba(255,255,255,0.95);
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .requirements-list h4 {
+            color: var(--silver-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        .requirements-list ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .requirements-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.6rem 0;
+            color: var(--silver-light);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .requirements-list li:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .requirements-list li svg {
+            width: 20px;
+            height: 20px;
+            min-width: 20px;
+            stroke: var(--copper);
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
+        /* Override any service-icon styles that might bleed in */
+        .requirements-list .service-icon,
+        .offering-card .service-icon {
+            display: none !important;
+        }
+
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .certificate-item {
+            background: rgba(255,255,255,0.9);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .certificate-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .certificate-item svg {
+            width: 40px;
+            height: 40px;
+            stroke: var(--copper);
+            margin-bottom: 0.75rem;
+        }
+
+        .certificate-item h5 {
+            color: var(--silver-light);
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        .training-list {
+            background: rgba(255,255,255,0.9);
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+        }
+
+        .training-list h4 {
+            color: var(--silver-light);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .training-list ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+
+        .training-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            background: rgba(184, 115, 51, 0.1);
+            border-radius: 8px;
+            color: var(--silver-light);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .training-list li:hover {
+            background: rgba(184, 115, 51, 0.2);
+            transform: translateX(5px);
+        }
+
+        .training-list li svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--copper);
+            flex-shrink: 0;
+        }
+
+        /* Stats Animation Enhancement */
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--copper);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(180deg, var(--copper) 0%, var(--copper-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Service Icon */
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 1.5rem;
+            color: var(--copper);
+        }
+
+        .service-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .offering-card {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .offering-card.reverse {
+                flex-direction: column;
+            }
+
+            .offering-image {
+                flex: 0 0 auto;
+                width: 100%;
+                min-height: 250px;
+            }
+
+            .offering-image img {
+                height: 250px;
+                min-height: 250px;
+            }
+
+            .certificates-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .training-list ul {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hexagon {
+                width: 100px;
+                height: 115px;
+            }
+
+            .certificates-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hexagon-content {
+                font-size: 0.65rem;
+            }
+
+            .hexagon.final-goal {
+                width: 130px;
+                height: 150px;
+            }
+
+            .hexagon-tooltip {
+                display: none;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <img src="../images/prp-logo.png" alt="PRP Aviation">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-link">Services</a>
+                    <div class="dropdown-menu">
+                        <a href="charter.html">Charter Flights</a>
+                        <a href="flight-school.html">Flight School</a>
+                        <a href="maintenance.html">Aircraft Maintenance</a>
+                        <a href="avionics.html">Avionics Repair</a>
+                        <a href="rental.html">Aircraft Rental</a>
+                    </div>
+                </li>
+                <li><a href="fleet.html" class="nav-link">Our Fleet</a></li>
+                <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="team.html" class="nav-link">Our Team</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="../index.html#quote" class="btn btn-primary">Get a Quote</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Flight Training</h1>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span>Flight Training</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flight School Introduction -->
+    <section class="services" style="padding-top: 6rem;">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image reveal">
+                    <img src="../images/sr22-g6.png" alt="Flight Training">
+                </div>
+                <div class="about-content reveal">
+                    <h2>Learn to Fly with the Best</h2>
+                    <p>Whether you're pursuing aviation as a career or fulfilling a lifelong dream, PRP Aviation Flight School provides the training, resources, and support you need to succeed.</p>
+                    <p>Our FAA-certified instructors bring thousands of hours of experience and a passion for teaching. Train on our state-of-the-art Cirrus aircraft equipped with the latest avionics and safety features.</p>
+
+                    <div class="about-stats" style="margin-top: 3rem;">
+                        <div class="stat">
+                            <span class="stat-number" data-target="500" data-suffix="+">0+</span>
+                            <span class="stat-label">Pilots Trained</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-target="98" data-suffix="%">0%</span>
+                            <span class="stat-label">Pass Rate</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-target="15" data-suffix="+">0+</span>
+                            <span class="stat-label">Years Teaching</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Training Roadmap -->
+    <section class="training-roadmap">
+        <div class="container">
+            <div class="roadmap-header reveal">
+                <h2>Private Pilot Program</h2>
+                <p>Your structured path from first flight to earning your Private Pilot Certificate. Click on any milestone to learn more.</p>
+            </div>
+
+            <div class="roadmap-instructions reveal">
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
+                    </svg>
+                    Hover over each hexagon to see details
+                </span>
+            </div>
+
+            <div class="hexagon-container">
+                <!-- Phase 1: First Solo -->
+                <div class="phase-section reveal">
+                    <div class="phase-title">
+                        <div class="phase-number">1</div>
+                        <div>
+                            <h3>Phase 1: First Solo</h3>
+                            <span>Foundation Skills & Solo Flight</span>
+                        </div>
+                    </div>
+                    <div class="hexagon-grid">
+                        <div class="hexagon" data-phase="1">
+                            <div class="hexagon-inner">
+                                <div class="hexagon-content">Walk Around<br>Ground Ops<br>Comms</div>
+                            </div>
+                            <div class="hexagon-tooltip">
+                                <h4>Pre-Flight Fundamentals</h4>
+                                <p>Learn proper aircraft inspection, ground operations, and radio communication basics.</p>
+                            </div>
+                        </div>
+                        <div class="hexagon" data-phase="1">
+                            <div class="hexagon-inner">
+                                <div class="hexagon-content">4 Forces<br>Engine Forces<br>Drag & Yaw</div>
+                            </div>
+                            <div class="hexagon-tooltip">
+                                <h4>Aerodynamics</h4>
+                                <p>Understand lift, weight, thrust, drag, and how adverse yaw affects flight.</p>
+                            </div>
+                        </div>
+                        <div class="hexagon" data-phase="1">
+                            <div class="hexagon-inner">
+                                <div class="hexagon-content">Intro<br>Ground Ref<br>Maneuvers</div>
+                            </div>
+                            <div class="hexagon-tooltip">
+                                <h4>Ground Reference Maneuvers</h4>
+                                <p>Master turns around a point, S-turns, and rectangular patterns using visual references.</p>
+                            </div>
+                        </div>
+                        <div class="hexagon" data-phase="1">
+                            <div class="hexagon-inner">
+                                <div class="hexagon-content">Intro<br>Slow Flight<br>Stalls & Turns</div>
+                            </div>
+                            <div class="hexagon-tooltip">
+                                <h4>Slow Flight & Stalls</h4>
+                                <p>Learn to recognize and recover from stalls while maintaining aircraft control.</p>
+                            </div>
+                        </div>
+                        <div class="hexagon" data-phase="1">
+                            <div class="hexagon-inner">
+                                <div class="hexagon-content">Class III<br>Medical<br>Solo Written</div>
+                            </div>
+                            <div class="hexagon-tooltip">
+                                <h4>Medical & Written Requirements</h4>
+                                <p>Obtain your medical certificate and pass the pre-solo written exam.</p>
+                            </div>
+                        </div>
+                        <div class="hexagon" data-phase="1">
+                            <div class="hexagon-inner">
+                                <div class="hexagon-content">Emergency<br>Procedures</div>
+                            </div>
+                            <div class="hexagon-tooltip">
+                                <h4>Emergency Procedures</h4>
+                                <p>Practice engine failures, emergency landings, and critical decision-making.</p>
+                            </div>
+                        </div>
+                        <div class="hexagon" data-phase="1">
+                            <div class="hexagon-inner">
+                                <div class="hexagon-content">Climbs<br>Descents<br>Turns Trim</div>
+                            </div>
+                            <div class="hexagon-tooltip">
+                                <h4>Basic Maneuvers</h4>
+                                <p>Perfect your climbs, descents, turns, and trim techniques for smooth flight.</p>
+                            </div>
+                        </div>
+                        <div class="hexagon" data-phase="1">
+                            <div class="hexagon-inner">
+                                <div class="hexagon-content">Pattern Ops<br>Normal T/O<br>& Landings</div>
+                            </div>
+                            <div class="hexagon-tooltip">
+                                <h4>Pattern Operations</h4>
+                                <p>Master traffic pattern procedures, takeoffs, and landing techniques.</p>
+                            </div>
+                        </div>
+                        <div class="hexagon" data-phase="1">
+                            <div class="hexagon-inner">
+                                <div class="hexagon-content">Airport Ops<br>Airspace<br>Sectional Map</div>
+                            </div>
+                            <div class="hexagon-tooltip">
+                                <h4>Airport & Airspace</h4>
+                                <p>Understand airport operations, airspace classifications, and chart reading.</p>
+                            </div>
+                        </div>
+                        <div class="hexagon milestone" data-phase="1">
+                            <div class="hexagon-inner">
+                                <div class="hexagon-content">FIRST<br>SOLO</div>
+                            </div>
+                            <div class="hexagon-tooltip">
+                                <h4>First Solo Flight</h4>
+                                <p>Your first flight as pilot in command! A major milestone in your aviation journey.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 2: Cross Country -->
+                <div class="phase-section reveal">
+                    <div class="phase-title">
+                        <div class="phase-number">2</div>
+                        <div>
+                            <h3>Phase 2: Cross Country</h3>
+                            <span>Navigation & Extended Flight</span>
+                        </div>
+                    </div>
+                    <div class="hexagon-grid">
+                        <div class="hexagon" data-phase="2">
+                            <div class="hexagon-inner">
+                                <div class="hexagon-content">Local Area<br>Solo<br>Checkout</div>
+                            </div>
+                            <div class="hexagon-tooltip">
+                                <h4>Local Area Solo</h4>
+                                <p>Build confidence with solo flights in your local practice area.</p>
+                            </div>
+                        </div>
+                        <div class="hexagon" data-phase="2">
+                            <div class="hexagon-inner">
+                                <div class="hexagon-content">Timing &<br>Fuel Calc<br>VOR Nav</div>
+                            </div>
+                            <div class="hexagon-tooltip">
+                                <h4>Navigation Fundamentals</h4>
+                                <p>Learn time/fuel calculations and VOR navigation techniques.</p>
+                            </div>
+                        </div>
+                        <div class="hexagon" data-phase="2">
+                            <div class="hexagon-inner">
+                                <div class="hexagon-content">Intro<br>Short/Soft<br>Field T/O & Ldg</div>
+                            </div>
+                            <div class="hexagon-tooltip">
+                                <h4>Short & Soft Field Operations</h4>
+                                <p>Master takeoffs and landings on short runways and soft surfaces.</p>
+                            </div>
+                        </div>
+                        <div class="hexagon" data-phase="2">
+                            <div class="hexagon-inner">
+                                <div class="hexagon-content">Aircraft<br>Systems<br>Leaning & Fuel</div>
+                            </div>
+                            <div class="hexagon-tooltip">
+                                <h4>Aircraft Systems</h4>
+                                <p>Deep dive into aircraft systems, mixture leaning, and fuel management.</p>
+                            </div>
+                        </div>
+                        <div class="hexagon" data-phase="2">
+                            <div class="hexagon-inner">
+                                <div class="hexagon-content">XC Academics<br>Pilotage<br>Dead Reckoning</div>
+                            </div>
+                            <div class="hexagon-tooltip">
+                                <h4>Cross Country Planning</h4>
+                                <p>Learn pilotage, dead reckoning, and flight planning fundamentals.</p>
+                            </div>
+                        </div>
+                        <div class="hexagon" data-phase="2">
+                            <div class="hexagon-inner">
+                                <div class="hexagon-content">Weather<br>NOTAMS<br>Filing Flight Plan</div>
+                            </div>
+                            <div class="hexagon-tooltip">
+                                <h4>Weather & Flight Planning</h4>
+                                <p>Interpret weather, check NOTAMs, and file proper flight plans.</p>
+                            </div>
+                        </div>
+                        <div class="hexagon" data-phase="2">
+                            <div class="hexagon-inner">
+                                <div class="hexagon-content">Emergency<br>Divert<br>Procedures</div>
+                            </div>
+                            <div class="hexagon-tooltip">
+                                <h4>Diversion Procedures</h4>
+                                <p>Handle in-flight emergencies and divert to alternate airports safely.</p>
+                            </div>
+                        </div>
+                        <div class="hexagon" data-phase="2">
+                            <div class="hexagon-inner">
+                                <div class="hexagon-content">Cross<br>Country<br>Solo</div>
+                            </div>
+                            <div class="hexagon-tooltip">
+                                <h4>Cross Country Solo</h4>
+                                <p>Your first solo cross country flight to a distant airport.</p>
+                            </div>
+                        </div>
+                        <div class="hexagon" data-phase="2">
+                            <div class="hexagon-inner">
+                                <div class="hexagon-content">Night<br>Cross<br>Country</div>
+                            </div>
+                            <div class="hexagon-tooltip">
+                                <h4>Night Cross Country</h4>
+                                <p>Experience cross country navigation at night with your instructor.</p>
+                            </div>
+                        </div>
+                        <div class="hexagon milestone" data-phase="2">
+                            <div class="hexagon-inner">
+                                <div class="hexagon-content">LONG XC<br>SOLO</div>
+                            </div>
+                            <div class="hexagon-tooltip">
+                                <h4>Long Solo Cross Country</h4>
+                                <p>Complete your required 150nm solo cross country with multiple stops.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 3: Checkride Prep -->
+                <div class="phase-section reveal">
+                    <div class="phase-title">
+                        <div class="phase-number">3</div>
+                        <div>
+                            <h3>Phase 3: Checkride Preparation</h3>
+                            <span>Proficiency & Certification</span>
+                        </div>
+                    </div>
+                    <div class="hexagon-grid">
+                        <div class="hexagon" data-phase="3">
+                            <div class="hexagon-inner">
+                                <div class="hexagon-content">10 Night<br>Landings</div>
+                            </div>
+                            <div class="hexagon-tooltip">
+                                <h4>Night Landing Proficiency</h4>
+                                <p>Complete required night landings to a full stop.</p>
+                            </div>
+                        </div>
+                        <div class="hexagon" data-phase="3">
+                            <div class="hexagon-inner">
+                                <div class="hexagon-content">3.0 Hours<br>Simulated<br>Instrument</div>
+                            </div>
+                            <div class="hexagon-tooltip">
+                                <h4>Instrument Training</h4>
+                                <p>Practice flying solely by reference to instruments under the hood.</p>
+                            </div>
+                        </div>
+                        <div class="hexagon" data-phase="3">
+                            <div class="hexagon-inner">
+                                <div class="hexagon-content">Proficient<br>Ground Ref<br>Maneuvers</div>
+                            </div>
+                            <div class="hexagon-tooltip">
+                                <h4>Maneuver Proficiency</h4>
+                                <p>Refine all ground reference maneuvers to checkride standards.</p>
+                            </div>
+                        </div>
+                        <div class="hexagon" data-phase="3">
+                            <div class="hexagon-inner">
+                                <div class="hexagon-content">Proficient<br>Slow Flight<br>Stalls & Turns</div>
+                            </div>
+                            <div class="hexagon-tooltip">
+                                <h4>Slow Flight Proficiency</h4>
+                                <p>Demonstrate mastery of slow flight and stall recovery.</p>
+                            </div>
+                        </div>
+                        <div class="hexagon" data-phase="3">
+                            <div class="hexagon-inner">
+                                <div class="hexagon-content">Proficient<br>Short/Soft<br>T/O & Landing</div>
+                            </div>
+                            <div class="hexagon-tooltip">
+                                <h4>Short/Soft Field Mastery</h4>
+                                <p>Perfect your short and soft field techniques for the checkride.</p>
+                            </div>
+                        </div>
+                        <div class="hexagon" data-phase="3">
+                            <div class="hexagon-inner">
+                                <div class="hexagon-content">POH &<br>Maintenance<br>Log Review</div>
+                            </div>
+                            <div class="hexagon-tooltip">
+                                <h4>Aircraft Documentation</h4>
+                                <p>Learn to verify aircraft airworthiness and documentation requirements.</p>
+                            </div>
+                        </div>
+                        <div class="hexagon milestone" data-phase="3">
+                            <div class="hexagon-inner">
+                                <div class="hexagon-content">FAA<br>Written<br>Exam</div>
+                            </div>
+                            <div class="hexagon-tooltip">
+                                <h4>FAA Knowledge Test</h4>
+                                <p>Pass your FAA Private Pilot written examination.</p>
+                            </div>
+                        </div>
+                        <div class="hexagon final-goal milestone" data-phase="3">
+                            <div class="hexagon-inner">
+                                <div class="hexagon-content">PRIVATE<br>PILOT<br>CHECKRIDE</div>
+                            </div>
+                            <div class="hexagon-tooltip">
+                                <h4>Private Pilot Checkride</h4>
+                                <p>Complete your practical test with a Designated Pilot Examiner and earn your certificate!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Offerings -->
+    <section class="training-offerings">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Training Programs</h2>
+                <p>From your first flight to advanced certifications, we provide comprehensive training for every stage of your aviation journey.</p>
+            </div>
+
+            <div class="offerings-container">
+                <!-- Private Pilot License -->
+                <div class="offering-card reveal">
+                    <div class="offering-image">
+                        <img src="../images/sr22-g6.png" alt="Private Pilot Training">
+                    </div>
+                    <div class="offering-content">
+                        <h3>Private Pilot License</h3>
+                        <p>The Private Pilot certificate is the first step on your path towards the skies. PRP Aviation provides instruction to take a student from zero flight hours to certified pilot and ensures that each student's journey is tailored to their needs.</p>
+
+                        <div class="offering-aircraft">
+                            <span class="aircraft-badge">Cessna 172</span>
+                            <span class="aircraft-badge">SR-20</span>
+                        </div>
+
+                        <div class="requirements-list">
+                            <h4>Requirements</h4>
+                            <ul>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    Be at least 17 years of age
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    Be able to read, speak, and understand the English language
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    Obtain at least a current third-class medical certificate
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    Receive a minimum of 40 hours of flight time including solo flight
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    Pass a knowledge test as well as the practical test
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advanced Certificates -->
+                <div class="offering-card reverse reveal">
+                    <div class="offering-image">
+                        <img src="../images/vision-jet.jpg" alt="Advanced Flight Training">
+                    </div>
+                    <div class="offering-content">
+                        <h3>Advanced Certificates</h3>
+                        <p>PRP Aviation offers more advanced certificates for pilots looking to take their next step in aviation. Just as with training for private piloting, PRP Aviation has developed a syllabus and training protocol to ensure success in the next step of your aviation journey.</p>
+
+                        <div class="certificates-grid">
+                            <div class="certificate-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                                </svg>
+                                <h5>Instrument Rating</h5>
+                            </div>
+                            <div class="certificate-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                                <h5>Commercial Certificate</h5>
+                            </div>
+                            <div class="certificate-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                                <h5>Instructor Certificate</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cirrus Transition Training -->
+                <div class="offering-card reveal">
+                    <div class="offering-image">
+                        <img src="../images/sr22-g6.png" alt="Cirrus Transition Training">
+                    </div>
+                    <div class="offering-content">
+                        <h3>Cirrus Transition Training</h3>
+                        <p>PRP Aviation offers instruction from Cirrus Standardized Instructor Pilots (CSIP). This training helps new SR 20 and SR 22 owners and renters become acclimated to Cirrus Aircraft. CSIP instruction helps pilots remain safe moving into the Cirrus family, while getting the most performance out of the aircraft.</p>
+
+                        <div class="training-list">
+                            <h4>Training Programs Offered</h4>
+                            <ul>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+                                    Cirrus Advanced Transition Training
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+                                    Cirrus Recurrent Training
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+                                    Cirrus Proficiency Training
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+                                    Cirrus Embark Training
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Train With Us -->
+    <section class="services">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Why Train With PRP?</h2>
+            </div>
+
+            <div class="services-grid" style="grid-template-columns: repeat(3, 1fr);">
+                <div class="service-card reveal">
+                    <h3>Premium Aircraft</h3>
+                    <p>Train on Cirrus aircraft with Garmin Perspective avionics, the same systems you'll find in modern cockpits worldwide.</p>
+                </div>
+                <div class="service-card reveal">
+                    <h3>Experienced Instructors</h3>
+                    <p>Our CFIs average over 5,000 hours and bring real-world experience from commercial, corporate, and military aviation.</p>
+                </div>
+                <div class="service-card reveal">
+                    <h3>Flexible Scheduling</h3>
+                    <p>We work around your schedule with morning, evening, and weekend availability. Train at your own pace.</p>
+                </div>
+                <div class="service-card reveal">
+                    <h3>Safety-First Culture</h3>
+                    <p>Cirrus Airframe Parachute System (CAPS) training included. We emphasize decision-making and risk management.</p>
+                </div>
+                <div class="service-card reveal">
+                    <h3>Ground School</h3>
+                    <p>Comprehensive ground instruction covers aerodynamics, regulations, weather, navigation, and more.</p>
+                </div>
+                <div class="service-card reveal">
+                    <h3>Career Support</h3>
+                    <p>For those pursuing professional aviation, we provide guidance on career paths and airline preparation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="quote-section">
+        <div class="container">
+            <div class="section-header reveal" style="margin-bottom: 2rem;">
+                <h2>Start Your Aviation Journey Today</h2>
+                <p>Schedule your discovery flight and take the first step toward earning your wings.</p>
+                <a href="contact.html" class="btn btn-primary btn-large" style="margin-top: 2rem;">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="../images/prp-logo.png" alt="PRP Aviation">
+                    <p>Personal. Reliable. Professional. Your trusted partner for all aviation services.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="charter.html">Charter Flights</a></li>
+                        <li><a href="flight-school.html">Flight School</a></li>
+                        <li><a href="maintenance.html">Aircraft Maintenance</a></li>
+                        <li><a href="avionics.html">Avionics Repair</a></li>
+                        <li><a href="rental.html">Aircraft Rental</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="fleet.html">Our Fleet</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-info-bar">
+                <span>KOCF - Ocala, FL</span>
+                <span class="divider">|</span>
+                <span>KPIE - Clearwater, FL</span>
+                <span class="divider">|</span>
+                <span><a href="tel:+13525177075">(352) 517-7075</a></span>
+                <span class="divider">|</span>
+                <span><a href="mailto:customerservice@prpaviation.com">customerservice@prpaviation.com</a></span>
+                <span class="divider">|</span>
+                <span>Mon-Fri 8am-4:30pm | Sat-Sun By Appt</span>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PRP Aviation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        // Interactive Hexagon Enhancements
+        document.addEventListener('DOMContentLoaded', function() {
+            const hexagons = document.querySelectorAll('.hexagon');
+
+            hexagons.forEach(hex => {
+                hex.addEventListener('click', function() {
+                    // Add pulse animation on click
+                    this.style.animation = 'hexPulse 0.5s ease';
+                    setTimeout(() => {
+                        this.style.animation = '';
+                    }, 500);
+                });
+            });
+
+            // Add CSS keyframes for pulse animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes hexPulse {
+                    0% { transform: scale(1); }
+                    50% { transform: scale(1.1); }
+                    100% { transform: scale(1); }
+                }
+            `;
+            document.head.appendChild(style);
+
+            // Animated counter for stats
+            const statNumbers = document.querySelectorAll('.stat-number[data-target]');
+
+            const animateCounter = (element) => {
+                const target = parseInt(element.getAttribute('data-target'));
+                const suffix = element.getAttribute('data-suffix') || '';
+                const duration = 2000;
+                const start = 0;
+                const startTime = performance.now();
+
+                const updateCounter = (currentTime) => {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+                    const current = Math.floor(easeOutQuart * target);
+
+                    element.textContent = current + suffix;
+
+                    if (progress < 1) {
+                        requestAnimationFrame(updateCounter);
+                    }
+                };
+
+                requestAnimationFrame(updateCounter);
+            };
+
+            // Intersection Observer for stat animation
+            const statsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounter(entry.target);
+                        statsObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            statNumbers.forEach(stat => statsObserver.observe(stat));
+        });
+    </script>
+</body>
+</html>

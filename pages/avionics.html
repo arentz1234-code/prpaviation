@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PRP Aviation Avionics - Garmin Certified 145 Repair Station. Expert Cirrus Perspective upgrades, installations, and repairs in Ocala, FL.">
+    <title>Avionics Services | PRP Aviation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        /* Avionics Hero */
+        .avionics-hero {
+            padding: 10rem 0 6rem;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .avionics-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(184, 115, 51, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(184, 115, 51, 0.05) 0%, transparent 50%);
+        }
+
+        .avionics-hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .avionics-hero-text h1 {
+            color: #fff;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .avionics-hero-text h1 span {
+            color: var(--copper-light);
+        }
+
+        .avionics-hero-text p {
+            color: rgba(255,255,255,0.8);
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .cert-badges {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .cert-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(184, 115, 51, 0.15);
+            border: 1px solid rgba(184, 115, 51, 0.3);
+            padding: 0.75rem 1.25rem;
+            border-radius: 50px;
+            color: var(--copper-light);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .cert-badge svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--copper-light);
+        }
+
+        /* Interactive Cockpit Display */
+        .cockpit-display {
+            position: relative;
+            background: linear-gradient(145deg, #1e2a3a 0%, #0d1520 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+            border: 2px solid rgba(184, 115, 51, 0.3);
+        }
+
+        .cockpit-screens {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .cockpit-screen {
+            background: linear-gradient(180deg, #0a1628 0%, #0d1e35 100%);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 3px solid #2a3a4a;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            min-height: 180px;
+        }
+
+        .cockpit-screen:hover {
+            border-color: var(--copper);
+            box-shadow: 0 0 30px rgba(184, 115, 51, 0.3);
+            transform: scale(1.02);
+        }
+
+        .cockpit-screen.active {
+            border-color: var(--copper);
+            box-shadow: 0 0 40px rgba(184, 115, 51, 0.4);
+        }
+
+        .screen-label {
+            position: absolute;
+            top: 0.75rem;
+            left: 0.75rem;
+            background: rgba(0,0,0,0.6);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            color: #4ecdc4;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .screen-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            text-align: center;
+            padding-top: 1rem;
+        }
+
+        .screen-content svg {
+            width: 50px;
+            height: 50px;
+            stroke: #4ecdc4;
+            margin-bottom: 0.75rem;
+            opacity: 0.8;
+        }
+
+        .screen-content h4 {
+            color: #fff;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .cockpit-bezel {
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(180deg, #3a4a5a 0%, #1a2a3a 100%);
+            padding: 0.5rem 2rem;
+            border-radius: 0 0 10px 10px;
+            border: 2px solid #4a5a6a;
+            border-top: none;
+        }
+
+        .cockpit-bezel span {
+            color: var(--copper-light);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        /* Services Section */
+        .avionics-services {
+            padding: 6rem 0;
+            background: var(--white);
+        }
+
+        .services-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .services-intro h2 {
+            margin-bottom: 1rem;
+        }
+
+        .services-intro p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+        }
+
+        /* Interactive Service Tabs */
+        .service-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .service-tab {
+            padding: 1rem 2rem;
+            background: var(--dark-gray);
+            border: 2px solid transparent;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            color: var(--text-gray);
+        }
+
+        .service-tab:hover {
+            border-color: var(--copper);
+            color: var(--copper);
+        }
+
+        .service-tab.active {
+            background: var(--gradient-copper);
+            color: #fff;
+            border-color: var(--copper);
+        }
+
+        .service-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .service-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .service-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            padding: 2rem;
+            background: var(--dark-gray);
+            border-radius: 24px;
+        }
+
+        .service-detail-text h3 {
+            font-size: 2rem;
+            color: var(--silver-light);
+            margin-bottom: 1rem;
+        }
+
+        .service-detail-text p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--silver-light);
+            font-size: 0.95rem;
+        }
+
+        .feature-list li svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--copper);
+            flex-shrink: 0;
+        }
+
+        .service-visual {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            min-height: 350px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .service-visual svg {
+            width: 120px;
+            height: 120px;
+            stroke: var(--copper);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-visual h4 {
+            color: #fff;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-visual p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+
+        /* Upgrade Path Section */
+        .upgrade-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            position: relative;
+        }
+
+        .upgrade-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .upgrade-header h2 {
+            color: #fff;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .upgrade-header p {
+            color: rgba(255,255,255,0.7);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .upgrade-comparison {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 2rem;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .upgrade-panel {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+
+        .upgrade-panel.before {
+            opacity: 0.7;
+        }
+
+        .upgrade-panel.after {
+            border-color: var(--copper);
+            box-shadow: 0 20px 60px rgba(184, 115, 51, 0.2);
+        }
+
+        .upgrade-panel h4 {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .upgrade-panel.after h4 {
+            color: var(--copper-light);
+        }
+
+        .upgrade-panel h3 {
+            color: #fff;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .upgrade-panel ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+        }
+
+        .upgrade-panel li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.95rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .upgrade-panel.after li {
+            color: rgba(255,255,255,0.9);
+        }
+
+        .upgrade-panel li svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+
+        .upgrade-panel.before li svg {
+            stroke: rgba(255,255,255,0.4);
+        }
+
+        .upgrade-panel.after li svg {
+            stroke: var(--copper-light);
+        }
+
+        .upgrade-arrow {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .upgrade-arrow svg {
+            width: 60px;
+            height: 60px;
+            stroke: var(--copper);
+            animation: pulse-arrow 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-arrow {
+            0%, 100% { transform: translateX(0); opacity: 1; }
+            50% { transform: translateX(10px); opacity: 0.7; }
+        }
+
+        .upgrade-arrow span {
+            color: var(--copper-light);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Process Steps */
+        .process-section {
+            padding: 6rem 0;
+            background: var(--dark-gray);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .process-step::after {
+            content: '';
+            position: absolute;
+            top: 40px;
+            right: -1rem;
+            width: calc(100% - 80px);
+            height: 2px;
+            background: linear-gradient(90deg, var(--copper), transparent);
+        }
+
+        .process-step:last-child::after {
+            display: none;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-copper);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            box-shadow: 0 10px 30px rgba(184, 115, 51, 0.3);
+        }
+
+        .process-step h4 {
+            color: var(--silver-light);
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .process-step p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Contact CTA */
+        .avionics-cta {
+            padding: 5rem 0;
+            background: var(--white);
+            text-align: center;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, var(--copper-dark) 0%, var(--copper) 100%);
+            border-radius: 24px;
+            padding: 4rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-box h2 {
+            color: #fff;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-box p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-box .btn-secondary {
+            background: #fff;
+            color: var(--copper);
+            border-color: #fff;
+        }
+
+        .cta-box .btn-secondary:hover {
+            background: transparent;
+            color: #fff;
+        }
+
+        .cta-contact {
+            margin-top: 2rem;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.95rem;
+        }
+
+        .cta-contact a {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .avionics-hero-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .service-detail {
+                grid-template-columns: 1fr;
+            }
+
+            .upgrade-comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .upgrade-arrow {
+                transform: rotate(90deg);
+                padding: 1rem 0;
+            }
+
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-step::after {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .avionics-hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .cockpit-screens {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-list {
+                grid-template-columns: 1fr;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .service-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .service-tab {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <img src="../images/prp-logo.png" alt="PRP Aviation">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-link">Services</a>
+                    <div class="dropdown-menu">
+                        <a href="charter.html">Charter Flights</a>
+                        <a href="flight-school.html">Flight School</a>
+                        <a href="maintenance.html">Aircraft Maintenance</a>
+                        <a href="avionics.html">Avionics Repair</a>
+                        <a href="rental.html">Aircraft Rental</a>
+                    </div>
+                </li>
+                <li><a href="fleet.html" class="nav-link">Our Fleet</a></li>
+                <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="team.html" class="nav-link">Our Team</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="../index.html#quote" class="btn btn-primary">Get a Quote</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="avionics-hero">
+        <div class="container">
+            <div class="avionics-hero-content">
+                <div class="avionics-hero-text reveal">
+                    <h1>Expert <span>Avionics</span> Services</h1>
+                    <p>PRP Aviation specializes in upgrading older generation Cirrus aircraft with cutting-edge Garmin avionics. Our skilled team transforms cockpits with precision craftsmanship and personalized care.</p>
+
+                    <div class="cert-badges">
+                        <div class="cert-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                            Garmin Certified 145 Repair Station
+                        </div>
+                        <div class="cert-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                            Cirrus Authorized Service Center
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cockpit-display reveal">
+                    <div class="cockpit-screens">
+                        <div class="cockpit-screen" data-screen="pfd">
+                            <span class="screen-label">PFD</span>
+                            <div class="screen-content">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="12" y1="2" x2="12" y2="6"></line>
+                                    <line x1="12" y1="18" x2="12" y2="22"></line>
+                                    <line x1="2" y1="12" x2="6" y2="12"></line>
+                                    <line x1="18" y1="12" x2="22" y2="12"></line>
+                                    <path d="M12 8 L8 16 L12 14 L16 16 Z"></path>
+                                </svg>
+                                <h4>Primary Flight Display</h4>
+                            </div>
+                        </div>
+                        <div class="cockpit-screen" data-screen="mfd">
+                            <span class="screen-label">MFD</span>
+                            <div class="screen-content">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                                    <path d="M3 9h18"></path>
+                                    <path d="M9 21V9"></path>
+                                    <circle cx="16" cy="15" r="2"></circle>
+                                </svg>
+                                <h4>Multi-Function Display</h4>
+                            </div>
+                        </div>
+                        <div class="cockpit-screen" data-screen="gtn">
+                            <span class="screen-label">GTN 750</span>
+                            <div class="screen-content">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
+                                </svg>
+                                <h4>GPS Navigator</h4>
+                            </div>
+                        </div>
+                        <div class="cockpit-screen" data-screen="autopilot">
+                            <span class="screen-label">GFC 700</span>
+                            <div class="screen-content">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                    <path d="M12 1v4M12 19v4M1 12h4M19 12h4"></path>
+                                    <path d="M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"></path>
+                                </svg>
+                                <h4>Autopilot System</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cockpit-bezel">
+                        <span>GARMIN PERSPECTIVE+</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section with Tabs -->
+    <section class="avionics-services">
+        <div class="container">
+            <div class="services-intro reveal">
+                <h2>Avionics Services</h2>
+                <p>From simple radio repairs to complete glass cockpit transformations, our certified technicians deliver expert installation, repair, and upgrade services.</p>
+            </div>
+
+            <div class="service-tabs reveal">
+                <button class="service-tab active" data-tab="installations">Installations</button>
+                <button class="service-tab" data-tab="upgrades">Panel Upgrades</button>
+                <button class="service-tab" data-tab="repairs">Repairs</button>
+                <button class="service-tab" data-tab="inspections">Inspections</button>
+            </div>
+
+            <div class="service-content active" id="installations">
+                <div class="service-detail">
+                    <div class="service-detail-text">
+                        <h3>Avionics Installations</h3>
+                        <p>Our team builds, terminates, and tests custom wiring harnesses for Garmin, Avidyne, and related systems. Every installation is performed to factory specifications with meticulous attention to detail.</p>
+                        <ul class="feature-list">
+                            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> G500/G600 TXi Displays</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> GTN 650/750 Xi Navigators</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> GFC 500/600 Autopilots</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> GMA Audio Panels</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> GTX Transponders (ADS-B)</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Satellite Weather & Radio</li>
+                        </ul>
+                    </div>
+                    <div class="service-visual">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                            <circle cx="12" cy="10" r="3"></circle>
+                            <path d="M7 10h-2M19 10h-2M12 5v-1M12 16v-1"></path>
+                        </svg>
+                        <h4>Factory-Quality Installations</h4>
+                        <p>Custom wiring harnesses & system integration</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-content" id="upgrades">
+                <div class="service-detail">
+                    <div class="service-detail-text">
+                        <h3>Panel Upgrades</h3>
+                        <p>We specialize in transforming older Cirrus aircraft cockpits with modern Garmin G500 PFD and MFD displays. Upgrade your legacy avionics to current technology for improved safety and capability.</p>
+                        <ul class="feature-list">
+                            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Legacy to Perspective+</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Avidyne to Garmin Conversion</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Round Gauge Modernization</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Complete Panel Redesign</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Engine Monitor Integration</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Custom Panel Fabrication</li>
+                        </ul>
+                    </div>
+                    <div class="service-visual">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <path d="M2 17l10 5 10-5"></path>
+                            <path d="M2 12l10 5 10-5"></path>
+                        </svg>
+                        <h4>Complete Transformations</h4>
+                        <p>Legacy to modern glass cockpit</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-content" id="repairs">
+                <div class="service-detail">
+                    <div class="service-detail-text">
+                        <h3>Troubleshooting & Repair</h3>
+                        <p>Expert diagnosis and repair of avionics issues. Our Garmin-certified technicians have over 15 years of experience in aircraft electrical systems and avionics troubleshooting.</p>
+                        <ul class="feature-list">
+                            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Display Diagnostics</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Wiring Fault Isolation</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Antenna Repairs</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Software Updates</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Connector Replacement</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Component-Level Repair</li>
+                        </ul>
+                    </div>
+                    <div class="service-visual">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                        </svg>
+                        <h4>Expert Diagnostics</h4>
+                        <p>Fast, accurate troubleshooting</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-content" id="inspections">
+                <div class="service-detail">
+                    <div class="service-detail-text">
+                        <h3>Inspections & Certifications</h3>
+                        <p>Keep your avionics current and compliant with required inspections and certifications. We perform all necessary testing to ensure your systems meet FAA requirements.</p>
+                        <ul class="feature-list">
+                            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Pitot-Static Testing</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Transponder Certification</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> ADS-B Compliance</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> ELT Testing</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Autopilot Flight Checks</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> RVSM Certification</li>
+                        </ul>
+                    </div>
+                    <div class="service-visual">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <h4>Full Compliance</h4>
+                        <p>FAA-required certifications</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upgrade Comparison -->
+    <section class="upgrade-section">
+        <div class="container">
+            <div class="upgrade-header reveal">
+                <h2>Transform Your Cockpit</h2>
+                <p>We specialize in upgrading older generation Cirrus aircraft with modern Garmin glass cockpit technology.</p>
+            </div>
+
+            <div class="upgrade-comparison reveal">
+                <div class="upgrade-panel before">
+                    <h4>Before</h4>
+                    <h3>Legacy Avionics</h3>
+                    <ul>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle></svg> Older round gauges</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle></svg> Limited situational awareness</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle></svg> Outdated navigation</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle></svg> Basic autopilot</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle></svg> No synthetic vision</li>
+                    </ul>
+                </div>
+
+                <div class="upgrade-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                    <span>Upgrade</span>
+                </div>
+
+                <div class="upgrade-panel after">
+                    <h4>After</h4>
+                    <h3>Garmin Perspective+</h3>
+                    <ul>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> G500/G600 TXi displays</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Enhanced situational awareness</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> GTN 750 Xi navigation</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> GFC 700 autopilot</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Synthetic vision technology</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Steps -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Our Process</h2>
+                <p>From consultation to completion, we guide you through every step.</p>
+            </div>
+
+            <div class="process-steps">
+                <div class="process-step reveal">
+                    <div class="step-number">1</div>
+                    <h4>Consultation</h4>
+                    <p>Discuss your needs, goals, and budget. We'll recommend the best solutions for your aircraft.</p>
+                </div>
+                <div class="process-step reveal">
+                    <div class="step-number">2</div>
+                    <h4>Planning</h4>
+                    <p>Detailed project planning including parts ordering, scheduling, and timeline coordination.</p>
+                </div>
+                <div class="process-step reveal">
+                    <div class="step-number">3</div>
+                    <h4>Installation</h4>
+                    <p>Expert installation by our Garmin-certified technicians with custom wiring harnesses.</p>
+                </div>
+                <div class="process-step reveal">
+                    <div class="step-number">4</div>
+                    <h4>Testing</h4>
+                    <p>Comprehensive ground and flight testing to ensure everything works perfectly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="avionics-cta">
+        <div class="container">
+            <div class="cta-box reveal">
+                <h2>Ready to Upgrade Your Avionics?</h2>
+                <p>Contact our team for a consultation on your avionics project. We'll help you find the right solution for your aircraft and budget.</p>
+                <a href="contact.html" class="btn btn-secondary btn-large">Get a Quote</a>
+                <p class="cta-contact">Or email us directly at <a href="mailto:customerservice@prpaviation.com">customerservice@prpaviation.com</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="../images/prp-logo.png" alt="PRP Aviation">
+                    <p>Personal. Reliable. Professional. Your trusted partner for all aviation services.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="charter.html">Charter Flights</a></li>
+                        <li><a href="flight-school.html">Flight School</a></li>
+                        <li><a href="maintenance.html">Aircraft Maintenance</a></li>
+                        <li><a href="avionics.html">Avionics Repair</a></li>
+                        <li><a href="rental.html">Aircraft Rental</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="fleet.html">Our Fleet</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-info-bar">
+                <span>KOCF - Ocala, FL</span>
+                <span class="divider">|</span>
+                <span>KPIE - Clearwater, FL</span>
+                <span class="divider">|</span>
+                <span><a href="tel:+13525177075">(352) 517-7075</a></span>
+                <span class="divider">|</span>
+                <span><a href="mailto:customerservice@prpaviation.com">customerservice@prpaviation.com</a></span>
+                <span class="divider">|</span>
+                <span>Mon-Fri 8am-4:30pm | Sat-Sun By Appt</span>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PRP Aviation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        // Service Tab Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.service-tab');
+            const contents = document.querySelectorAll('.service-content');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const target = this.getAttribute('data-tab');
+
+                    // Remove active from all
+                    tabs.forEach(t => t.classList.remove('active'));
+                    contents.forEach(c => c.classList.remove('active'));
+
+                    // Add active to clicked
+                    this.classList.add('active');
+                    document.getElementById(target).classList.add('active');
+                });
+            });
+
+            // Cockpit screen hover effects
+            const screens = document.querySelectorAll('.cockpit-screen');
+            screens.forEach(screen => {
+                screen.addEventListener('click', function() {
+                    screens.forEach(s => s.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

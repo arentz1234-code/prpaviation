@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PRP Aviation Pricing - Transparent pricing for charter flights, flight training, aircraft rental, and maintenance services.">
+    <title>Pricing | PRP Aviation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .pricing-table {
+            background: var(--dark-gray);
+            border: 1px solid rgba(184, 115, 51, 0.3);
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 3rem;
+        }
+        .pricing-table-header {
+            background: var(--gradient-copper);
+            padding: 1.5rem 2rem;
+        }
+        .pricing-table-header h3 {
+            color: var(--white);
+            margin: 0;
+        }
+        .pricing-table-body {
+            padding: 0;
+        }
+        .pricing-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 2rem;
+            border-bottom: 1px solid rgba(184, 115, 51, 0.15);
+        }
+        .pricing-row:last-child {
+            border-bottom: none;
+        }
+        .pricing-row:hover {
+            background: rgba(184, 115, 51, 0.1);
+        }
+        .pricing-item {
+            color: var(--silver);
+        }
+        .pricing-value {
+            color: var(--copper-light);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        .pricing-note {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            padding: 1.5rem 2rem;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        .pricing-card {
+            background: var(--dark-gray);
+            border: 1px solid rgba(184, 115, 51, 0.3);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .pricing-card:hover {
+            border-color: var(--copper);
+            transform: translateY(-10px);
+        }
+        .pricing-card.featured {
+            border-color: var(--copper);
+            position: relative;
+        }
+        .pricing-card.featured::before {
+            content: 'Most Popular';
+            position: absolute;
+            top: 1rem;
+            right: -2rem;
+            background: var(--gradient-copper);
+            color: white;
+            padding: 0.5rem 3rem;
+            font-size: 0.8rem;
+            transform: rotate(45deg);
+        }
+        .pricing-card-header {
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(184, 115, 51, 0.2);
+        }
+        .pricing-card-header h3 {
+            color: var(--silver-light);
+            margin-bottom: 0.5rem;
+        }
+        .pricing-card-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--copper-light);
+        }
+        .pricing-card-price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--text-gray);
+        }
+        .pricing-card-body {
+            padding: 2rem;
+        }
+        .pricing-card-body ul {
+            list-style: none;
+        }
+        .pricing-card-body li {
+            padding: 0.75rem 0;
+            color: var(--silver);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .pricing-card-body li svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--copper-light);
+            flex-shrink: 0;
+        }
+        .pricing-card-footer {
+            padding: 0 2rem 2rem;
+        }
+        .pricing-card-footer .btn {
+            width: 100%;
+        }
+        @media (max-width: 992px) {
+            .pricing-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <img src="../images/prp-logo.png" alt="PRP Aviation">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-link">Services</a>
+                    <div class="dropdown-menu">
+                        <a href="charter.html">Charter Flights</a>
+                        <a href="flight-school.html">Flight School</a>
+                        <a href="maintenance.html">Aircraft Maintenance</a>
+                        <a href="avionics.html">Avionics Repair</a>
+                        <a href="rental.html">Aircraft Rental</a>
+                    </div>
+                </li>
+                <li><a href="fleet.html" class="nav-link">Our Fleet</a></li>
+                <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="team.html" class="nav-link">Our Team</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="../index.html#quote" class="btn btn-primary">Get a Quote</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Pricing</h1>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span>Pricing</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Introduction -->
+    <section class="services" style="padding-top: 4rem; padding-bottom: 2rem;">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Transparent Pricing</h2>
+                <p>We believe in straightforward, competitive pricing with no hidden fees. Below are our standard rates for reference. Contact us for a customized quote.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Charter Pricing -->
+    <section class="services" style="padding-top: 2rem;">
+        <div class="container">
+            <h2 class="reveal" style="margin-bottom: 2rem;">Charter Flights</h2>
+
+            <div class="pricing-table reveal">
+                <div class="pricing-table-header">
+                    <h3>Aircraft Charter Rates</h3>
+                </div>
+                <div class="pricing-table-body">
+                    <div class="pricing-row">
+                        <span class="pricing-item">Cirrus SR-22</span>
+                        <span class="pricing-value">Starting at $650/hour</span>
+                    </div>
+                    <div class="pricing-row">
+                        <span class="pricing-item">Cirrus Vision Jet SF50</span>
+                        <span class="pricing-value">Starting at $1,800/hour</span>
+                    </div>
+                    <div class="pricing-row">
+                        <span class="pricing-item">Epic E1000</span>
+                        <span class="pricing-value">Starting at $2,200/hour</span>
+                    </div>
+                </div>
+                <div class="pricing-note">
+                    * Rates are for flight time only. Landing fees, overnight fees, and repositioning may apply. Request a quote for all-inclusive pricing.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flight Training Pricing -->
+    <section class="fleet" style="background: var(--dark-gray);">
+        <div class="container">
+            <h2 class="reveal" style="margin-bottom: 2rem;">Flight Training</h2>
+
+            <div class="pricing-cards reveal">
+                <div class="pricing-card">
+                    <div class="pricing-card-header">
+                        <h3>Discovery Flight</h3>
+                        <div class="pricing-card-price">$199</div>
+                    </div>
+                    <div class="pricing-card-body">
+                        <ul>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                30-minute flight
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Pre-flight briefing
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Hands-on flying
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Photo opportunity
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pricing-card-footer">
+                        <a href="contact.html" class="btn btn-secondary">Book Now</a>
+                    </div>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="pricing-card-header">
+                        <h3>Private Pilot</h3>
+                        <div class="pricing-card-price">$285<span>/hour</span></div>
+                    </div>
+                    <div class="pricing-card-body">
+                        <ul>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Aircraft rental included
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                CFI instruction
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Ground school access
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Progress tracking
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Checkride prep
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pricing-card-footer">
+                        <a href="contact.html" class="btn btn-primary">Get Started</a>
+                    </div>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-card-header">
+                        <h3>Instrument Rating</h3>
+                        <div class="pricing-card-price">$295<span>/hour</span></div>
+                    </div>
+                    <div class="pricing-card-body">
+                        <ul>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                IFR-equipped aircraft
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                CFII instruction
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Simulator time
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Approach training
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pricing-card-footer">
+                        <a href="contact.html" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rental Pricing -->
+    <section class="services">
+        <div class="container">
+            <h2 class="reveal" style="margin-bottom: 2rem;">Aircraft Rental</h2>
+
+            <div class="pricing-table reveal">
+                <div class="pricing-table-header">
+                    <h3>Hourly Rental Rates (Wet)</h3>
+                </div>
+                <div class="pricing-table-body">
+                    <div class="pricing-row">
+                        <span class="pricing-item">Cirrus SR-20</span>
+                        <span class="pricing-value">$245/hour</span>
+                    </div>
+                    <div class="pricing-row">
+                        <span class="pricing-item">Cirrus SR-22</span>
+                        <span class="pricing-value">$295/hour</span>
+                    </div>
+                    <div class="pricing-row">
+                        <span class="pricing-item">Block Time (10+ hours)</span>
+                        <span class="pricing-value">10% discount</span>
+                    </div>
+                    <div class="pricing-row">
+                        <span class="pricing-item">Block Time (25+ hours)</span>
+                        <span class="pricing-value">15% discount</span>
+                    </div>
+                </div>
+                <div class="pricing-note">
+                    * Wet rates include fuel. Checkout flight and renter's insurance required. Daily minimums may apply for overnight rentals.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Maintenance Pricing -->
+    <section class="fleet" style="background: var(--dark-gray);">
+        <div class="container">
+            <h2 class="reveal" style="margin-bottom: 2rem;">Maintenance Services</h2>
+
+            <div class="pricing-table reveal">
+                <div class="pricing-table-header">
+                    <h3>Labor Rates</h3>
+                </div>
+                <div class="pricing-table-body">
+                    <div class="pricing-row">
+                        <span class="pricing-item">A&P Technician</span>
+                        <span class="pricing-value">$95/hour</span>
+                    </div>
+                    <div class="pricing-row">
+                        <span class="pricing-item">IA Technician</span>
+                        <span class="pricing-value">$115/hour</span>
+                    </div>
+                    <div class="pricing-row">
+                        <span class="pricing-item">Avionics Technician</span>
+                        <span class="pricing-value">$125/hour</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pricing-table reveal" style="margin-top: 2rem;">
+                <div class="pricing-table-header">
+                    <h3>Common Services</h3>
+                </div>
+                <div class="pricing-table-body">
+                    <div class="pricing-row">
+                        <span class="pricing-item">Oil Change (SR-22)</span>
+                        <span class="pricing-value">$175</span>
+                    </div>
+                    <div class="pricing-row">
+                        <span class="pricing-item">Annual Inspection (SR-22)</span>
+                        <span class="pricing-value">Starting at $2,500</span>
+                    </div>
+                    <div class="pricing-row">
+                        <span class="pricing-item">CAPS Repack</span>
+                        <span class="pricing-value">Contact for quote</span>
+                    </div>
+                    <div class="pricing-row">
+                        <span class="pricing-item">Pre-Buy Inspection</span>
+                        <span class="pricing-value">Starting at $750</span>
+                    </div>
+                </div>
+                <div class="pricing-note">
+                    * Parts and materials not included. Contact us for a complete estimate based on your aircraft and requirements.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="quote-section">
+        <div class="container">
+            <div class="section-header reveal" style="margin-bottom: 2rem;">
+                <h2>Get a Custom Quote</h2>
+                <p>Every mission is unique. Contact us for personalized pricing based on your specific needs.</p>
+                <a href="../index.html#quote" class="btn btn-primary btn-large" style="margin-top: 2rem;">Request a Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="../images/prp-logo.png" alt="PRP Aviation">
+                    <p>Personal. Reliable. Professional. Your trusted partner for all aviation services.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="charter.html">Charter Flights</a></li>
+                        <li><a href="flight-school.html">Flight School</a></li>
+                        <li><a href="maintenance.html">Aircraft Maintenance</a></li>
+                        <li><a href="avionics.html">Avionics Repair</a></li>
+                        <li><a href="rental.html">Aircraft Rental</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="fleet.html">Our Fleet</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-info-bar">
+                <span>KOCF - Ocala, FL</span>
+                <span class="divider">|</span>
+                <span>KPIE - Clearwater, FL</span>
+                <span class="divider">|</span>
+                <span><a href="tel:+13525177075">(352) 517-7075</a></span>
+                <span class="divider">|</span>
+                <span><a href="mailto:customerservice@prpaviation.com">customerservice@prpaviation.com</a></span>
+                <span class="divider">|</span>
+                <span>Mon-Fri 8am-4:30pm | Sat-Sun By Appt</span>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PRP Aviation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

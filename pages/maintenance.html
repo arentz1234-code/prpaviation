@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PRP Aviation Aircraft Maintenance - FAA-certified maintenance services. Annual inspections, repairs, and upgrades for Cirrus and general aviation aircraft.">
+    <title>Aircraft Maintenance | PRP Aviation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        /* Maintenance Team Hero Section */
+        .maintenance-hero {
+            position: relative;
+            padding: 0;
+            margin-top: 80px;
+        }
+
+        .maintenance-hero img {
+            width: 100%;
+            height: auto;
+            display: block;
+            max-height: 600px;
+            object-fit: cover;
+        }
+
+        .maintenance-hero-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(26, 26, 46, 0.95));
+            padding: 4rem 2rem 3rem;
+        }
+
+        .maintenance-hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .maintenance-hero h1 {
+            color: #fff;
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .maintenance-hero p {
+            color: rgba(255,255,255,0.8);
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+        /* Concierge Maintenance Section */
+        .concierge-section {
+            padding: 5rem 0;
+            background: var(--white);
+            text-align: center;
+        }
+
+        .concierge-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .concierge-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .concierge-content p {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: var(--silver-light);
+        }
+
+        .certification-badges {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .cert-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .cert-badge-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--copper) 0%, var(--copper-dark) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(184, 115, 51, 0.3);
+        }
+
+        .cert-badge-icon svg {
+            width: 40px;
+            height: 40px;
+            stroke: #fff;
+        }
+
+        .cert-badge span {
+            font-weight: 600;
+            color: var(--silver-light);
+            font-size: 0.9rem;
+        }
+
+        /* Maintenance Director Section */
+        .director-section {
+            padding: 5rem 0;
+            background: var(--dark-gray);
+        }
+
+        .director-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .director-content h2 {
+            font-size: 2.2rem;
+            color: var(--silver-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .director-content .director-title {
+            color: var(--copper);
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+        }
+
+        .director-content p {
+            color: var(--text-gray);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .director-credentials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .credential-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(184, 115, 51, 0.1);
+            padding: 0.75rem 1.25rem;
+            border-radius: 50px;
+            border: 1px solid rgba(184, 115, 51, 0.3);
+        }
+
+        .credential-badge svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--copper);
+        }
+
+        .credential-badge span {
+            color: var(--copper-light);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .director-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .director-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        .director-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 3px solid rgba(184, 115, 51, 0.3);
+            border-radius: 20px;
+            pointer-events: none;
+        }
+
+        @media (max-width: 992px) {
+            .director-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .director-image {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+
+        /* Interactive Aircraft Diagram */
+        .aircraft-diagram-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .aircraft-diagram-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23b87333' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .diagram-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .diagram-header h2 {
+            color: #fff;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .diagram-header p {
+            color: rgba(255,255,255,0.7);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .aircraft-interactive {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            z-index: 2;
+        }
+
+        .aircraft-svg-container {
+            position: relative;
+            background: rgba(255,255,255,0.05);
+            border-radius: 24px;
+            padding: 3rem;
+            border: 1px solid rgba(184, 115, 51, 0.2);
+        }
+
+        .aircraft-outline {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        /* Hotspots on aircraft */
+        .maintenance-hotspot {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-copper);
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 700;
+            font-size: 1rem;
+            box-shadow: 0 4px 20px rgba(184, 115, 51, 0.5);
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .maintenance-hotspot::before {
+            content: '';
+            position: absolute;
+            inset: -5px;
+            border: 2px solid var(--copper);
+            border-radius: 50%;
+            animation: hotspot-pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes hotspot-pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.3); opacity: 0; }
+        }
+
+        .maintenance-hotspot:hover {
+            transform: scale(1.2);
+            box-shadow: 0 8px 30px rgba(184, 115, 51, 0.6);
+        }
+
+        .maintenance-hotspot.active {
+            background: linear-gradient(135deg, #ffd700 0%, var(--copper) 100%);
+        }
+
+        /* Hotspot positions - SR22 layout */
+        .hotspot-engine { top: 38%; left: 8%; }
+        .hotspot-avionics { top: 18%; left: 30%; }
+        .hotspot-caps { top: 28%; left: 58%; }
+        .hotspot-wing { top: 55%; left: 22%; }
+        .hotspot-landing { top: 75%; left: 24%; }
+
+        /* Info Panel */
+        .maintenance-info-panel {
+            margin-top: 2rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid rgba(184, 115, 51, 0.3);
+            min-height: 200px;
+            backdrop-filter: blur(10px);
+        }
+
+        .info-panel-content {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .info-panel-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .info-panel-content h3 {
+            color: var(--copper-light);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .info-panel-content h3 svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--copper-light);
+        }
+
+        .info-panel-content p {
+            color: rgba(255,255,255,0.85);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .info-panel-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+
+        .info-panel-content li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.95rem;
+        }
+
+        .info-panel-content li svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--copper-light);
+            flex-shrink: 0;
+        }
+
+        .default-message {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .default-message svg {
+            width: 60px;
+            height: 60px;
+            stroke: var(--copper);
+            margin-bottom: 1rem;
+            opacity: 0.6;
+        }
+
+        .default-message p {
+            color: rgba(255,255,255,0.6);
+            font-size: 1.1rem;
+        }
+
+        /* Maintenance Intervals Card Grid */
+        .intervals-section {
+            padding: 6rem 0;
+            background: var(--dark-gray);
+        }
+
+        .intervals-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .interval-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .interval-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-copper);
+        }
+
+        .interval-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(184, 115, 51, 0.15);
+        }
+
+        .interval-hours {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--copper);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .interval-hours span {
+            font-size: 1rem;
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+
+        .interval-card h4 {
+            font-size: 1.1rem;
+            color: var(--silver-light);
+            margin-bottom: 1rem;
+        }
+
+        .interval-card p {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        /* Aircraft We Service */
+        .aircraft-service-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .aircraft-service-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+        }
+
+        .aircraft-service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--copper);
+            box-shadow: 0 20px 50px rgba(184, 115, 51, 0.15);
+        }
+
+        .aircraft-service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(184, 115, 51, 0.1) 0%, rgba(184, 115, 51, 0.05) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .aircraft-service-icon svg {
+            width: 40px;
+            height: 40px;
+            stroke: var(--copper);
+        }
+
+        .aircraft-service-card h3 {
+            font-size: 1.25rem;
+            color: var(--silver-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .aircraft-service-card p {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .intervals-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .aircraft-service-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .info-panel-content ul {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .maintenance-hero h1 {
+                font-size: 2rem;
+            }
+
+            .intervals-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .aircraft-service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .certification-badges {
+                gap: 1.5rem;
+            }
+
+            .maintenance-hotspot {
+                width: 30px;
+                height: 30px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <img src="../images/prp-logo.png" alt="PRP Aviation">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-link">Services</a>
+                    <div class="dropdown-menu">
+                        <a href="charter.html">Charter Flights</a>
+                        <a href="flight-school.html">Flight School</a>
+                        <a href="maintenance.html">Aircraft Maintenance</a>
+                        <a href="avionics.html">Avionics Repair</a>
+                        <a href="rental.html">Aircraft Rental</a>
+                    </div>
+                </li>
+                <li><a href="fleet.html" class="nav-link">Our Fleet</a></li>
+                <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="team.html" class="nav-link">Our Team</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="../index.html#quote" class="btn btn-primary">Get a Quote</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Maintenance Team Hero -->
+    <section class="maintenance-hero">
+        <img src="../images/maintenance-team.png" alt="PRP Aviation Maintenance Team">
+        <div class="maintenance-hero-overlay">
+            <div class="maintenance-hero-content">
+                <h1>Aircraft Maintenance</h1>
+                <p>Expert Care from Our Dedicated Team of FAA-Certified Technicians</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Concierge Maintenance -->
+    <section class="concierge-section">
+        <div class="container">
+            <div class="concierge-content reveal">
+                <h2>Concierge Maintenance Department</h2>
+                <p>PRP's Concierge Maintenance Department offers comprehensive annual inspections and expert maintenance services for Cirrus aircraft. With safety as our top priority, you can trust our skilled team to deliver meticulous inspections and maintenance performed to the highest standards of excellence. At our Service Center, we are dedicated to providing exceptional care for your aircraft, no matter the scope of your needs.</p>
+
+                <div class="certification-badges">
+                    <div class="cert-badge">
+                        <div class="cert-badge-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </div>
+                        <span>Cirrus Authorized Service Center</span>
+                    </div>
+                    <div class="cert-badge">
+                        <div class="cert-badge-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="8" r="7"></circle>
+                                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                            </svg>
+                        </div>
+                        <span>FAA Part 145 Certified</span>
+                    </div>
+                    <div class="cert-badge">
+                        <div class="cert-badge-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                        </div>
+                        <span>Factory-Trained Technicians</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Maintenance Director -->
+    <section class="director-section">
+        <div class="container">
+            <div class="director-grid">
+                <div class="director-content reveal">
+                    <h2>Harry Normington</h2>
+                    <p class="director-title">Director of Maintenance</p>
+                    <p>Our Director of Maintenance, Harry Normington, has over 40 years of experience in aircraft maintenance, production, and assembly, with a strong background in both military and commercial aviation.</p>
+                    <p>He is certified by the FAA as an Airframe and Powerplant mechanic with Inspection Authorization and holds a commercial helicopter pilot license with instrument ratings. He is highly skilled in structural repairs, hydraulics, engine systems, inspections, and compliance with FAA quality control standards.</p>
+
+                    <div class="director-credentials">
+                        <div class="credential-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                            <span>A&P Mechanic</span>
+                        </div>
+                        <div class="credential-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                            <span>IA Certified</span>
+                        </div>
+                        <div class="credential-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/>
+                            </svg>
+                            <span>Commercial Helicopter Pilot</span>
+                        </div>
+                        <div class="credential-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="8" r="7"></circle>
+                                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                            </svg>
+                            <span>40+ Years Experience</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="director-image reveal">
+                    <img src="../images/harry-normington.jpg" alt="Harry Normington - Director of Maintenance">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Maintenance Intervals -->
+    <section class="intervals-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Cirrus Maintenance Intervals</h2>
+                <p>Keep your aircraft in peak condition with these recommended service intervals.</p>
+            </div>
+
+            <div class="intervals-grid">
+                <div class="interval-card reveal">
+                    <div class="interval-hours">50<span> hrs</span></div>
+                    <h4>Oil Change</h4>
+                    <p>Regular oil and filter changes to maintain engine health and longevity.</p>
+                </div>
+                <div class="interval-card reveal">
+                    <div class="interval-hours">100<span> hrs</span></div>
+                    <h4>100-Hour Inspection</h4>
+                    <p>Required for aircraft used in commercial operations. Comprehensive systems check.</p>
+                </div>
+                <div class="interval-card reveal">
+                    <div class="interval-hours">12<span> mo</span></div>
+                    <h4>Annual Inspection</h4>
+                    <p>FAA-required annual inspection covering all aircraft systems and airworthiness.</p>
+                </div>
+                <div class="interval-card reveal">
+                    <div class="interval-hours">10<span> yrs</span></div>
+                    <h4>CAPS Repack</h4>
+                    <p>Cirrus Airframe Parachute System rocket motor replacement and inspection.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aircraft We Service -->
+    <section class="services">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Aircraft We Service</h2>
+                <p>Specialized expertise in premium aircraft with capabilities for most general aviation types.</p>
+            </div>
+
+            <div class="aircraft-service-grid">
+                <div class="aircraft-service-card reveal">
+                    <div class="aircraft-service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/>
+                        </svg>
+                    </div>
+                    <h3>Cirrus SR20 / SR22</h3>
+                    <p>All model years and generations</p>
+                </div>
+                <div class="aircraft-service-card reveal">
+                    <div class="aircraft-service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/>
+                        </svg>
+                    </div>
+                    <h3>Cirrus SR22T</h3>
+                    <p>Turbocharged models</p>
+                </div>
+                <div class="aircraft-service-card reveal">
+                    <div class="aircraft-service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/>
+                        </svg>
+                    </div>
+                    <h3>Vision Jet SF50</h3>
+                    <p>Personal jet service</p>
+                </div>
+                <div class="aircraft-service-card reveal">
+                    <div class="aircraft-service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/>
+                        </svg>
+                    </div>
+                    <h3>General Aviation</h3>
+                    <p>Cessna, Piper, Beechcraft</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="quote-section">
+        <div class="container">
+            <div class="section-header reveal" style="margin-bottom: 2rem;">
+                <h2>Schedule Your Maintenance</h2>
+                <p>Contact us to schedule your next inspection or discuss your maintenance needs.</p>
+                <a href="contact.html" class="btn btn-primary btn-large" style="margin-top: 2rem;">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="../images/prp-logo.png" alt="PRP Aviation">
+                    <p>Personal. Reliable. Professional. Your trusted partner for all aviation services.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="charter.html">Charter Flights</a></li>
+                        <li><a href="flight-school.html">Flight School</a></li>
+                        <li><a href="maintenance.html">Aircraft Maintenance</a></li>
+                        <li><a href="avionics.html">Avionics Repair</a></li>
+                        <li><a href="rental.html">Aircraft Rental</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="fleet.html">Our Fleet</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-info-bar">
+                <span>KOCF - Ocala, FL</span>
+                <span class="divider">|</span>
+                <span>KPIE - Clearwater, FL</span>
+                <span class="divider">|</span>
+                <span><a href="tel:+13525177075">(352) 517-7075</a></span>
+                <span class="divider">|</span>
+                <span><a href="mailto:customerservice@prpaviation.com">customerservice@prpaviation.com</a></span>
+                <span class="divider">|</span>
+                <span>Mon-Fri 8am-4:30pm | Sat-Sun By Appt</span>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PRP Aviation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        // Interactive Aircraft Diagram
+        document.addEventListener('DOMContentLoaded', function() {
+            const hotspots = document.querySelectorAll('.maintenance-hotspot');
+            const infoPanels = document.querySelectorAll('.info-panel-content');
+
+            hotspots.forEach(hotspot => {
+                hotspot.addEventListener('click', function() {
+                    const infoId = this.getAttribute('data-info');
+
+                    // Remove active class from all hotspots and panels
+                    hotspots.forEach(h => h.classList.remove('active'));
+                    infoPanels.forEach(p => p.classList.remove('active'));
+
+                    // Add active class to clicked hotspot and corresponding panel
+                    this.classList.add('active');
+                    document.getElementById(infoId + '-info').classList.add('active');
+                });
+
+                hotspot.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.2)';
+                });
+
+                hotspot.addEventListener('mouseleave', function() {
+                    if (!this.classList.contains('active')) {
+                        this.style.transform = 'scale(1)';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

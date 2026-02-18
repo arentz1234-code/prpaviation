@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Meet the PRP Aviation team - experienced pilots, certified technicians, and dedicated staff committed to aviation excellence.">
+    <title>Our Team | PRP Aviation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+        .team-card {
+            background: var(--white);
+            border: 1px solid rgba(184, 115, 51, 0.2);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        .team-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--copper);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+        .team-image {
+            height: 380px;
+            overflow: hidden;
+            position: relative;
+            background: #3d5a80;
+            background-repeat: no-repeat;
+        }
+        .team-image img {
+            display: none;
+        }
+        /* Use background images for proper cropping - Leadership row */
+        .services .team-card:nth-child(1) .team-image {
+            background-image: url('../images/team-row1.png');
+            background-size: 400% auto;
+            background-position: 0% 0%;
+        }
+        .services .team-card:nth-child(2) .team-image {
+            background-image: url('../images/team-row1.png');
+            background-size: 400% auto;
+            background-position: 33.33% 0%;
+        }
+        .services .team-card:nth-child(3) .team-image {
+            background-image: url('../images/team-row1.png');
+            background-size: 400% auto;
+            background-position: 66.66% 0%;
+        }
+        .services .team-card:nth-child(4) .team-image {
+            background-image: url('../images/team-row1.png');
+            background-size: 400% auto;
+            background-position: 100% 0%;
+        }
+        .team-card:hover .team-image {
+            transform: scale(1.02);
+        }
+        /* Flight Instructors section uses team-row2.png */
+        .fleet .team-card:nth-child(1) .team-image {
+            background-image: url('../images/team-row2.png');
+            background-size: 400% auto;
+            background-position: 0% 0%;
+        }
+        .fleet .team-card:nth-child(2) .team-image {
+            background-image: url('../images/team-row2.png');
+            background-size: 400% auto;
+            background-position: 33.33% 0%;
+        }
+        .fleet .team-card:nth-child(3) .team-image {
+            background-image: url('../images/team-row2.png');
+            background-size: 400% auto;
+            background-position: 66.66% 0%;
+        }
+        .fleet .team-card:nth-child(4) .team-image {
+            background-image: url('../images/team-row2.png');
+            background-size: 400% auto;
+            background-position: 100% 0%;
+        }
+        .team-info {
+            padding: 2rem;
+            text-align: center;
+        }
+        .team-info h3 {
+            color: var(--silver-light);
+            margin-bottom: 0.25rem;
+        }
+        .team-role {
+            color: var(--copper-light);
+            font-weight: 500;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .team-info p {
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+        .team-certs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+        .team-cert {
+            background: rgba(184, 115, 51, 0.2);
+            color: var(--copper-light);
+            padding: 0.35rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(184, 115, 51, 0.2);
+        }
+        .team-social a {
+            width: 40px;
+            height: 40px;
+            background: var(--black);
+            border: 1px solid rgba(184, 115, 51, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .team-social a:hover {
+            background: var(--copper);
+            border-color: var(--copper);
+        }
+        .team-social svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--silver);
+        }
+        @media (max-width: 1200px) {
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+            .team-image {
+                height: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <img src="../images/prp-logo.png" alt="PRP Aviation">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-link">Services</a>
+                    <div class="dropdown-menu">
+                        <a href="charter.html">Charter Flights</a>
+                        <a href="flight-school.html">Flight School</a>
+                        <a href="maintenance.html">Aircraft Maintenance</a>
+                        <a href="avionics.html">Avionics Repair</a>
+                        <a href="rental.html">Aircraft Rental</a>
+                    </div>
+                </li>
+                <li><a href="fleet.html" class="nav-link">Our Fleet</a></li>
+                <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="team.html" class="nav-link">Our Team</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="../index.html#quote" class="btn btn-primary">Get a Quote</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Team</h1>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span>Our Team</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Introduction -->
+    <section class="services" style="padding-top: 4rem; padding-bottom: 2rem;">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Meet the Experts</h2>
+                <p>Our team of experienced professionals is dedicated to providing exceptional aviation services. From our pilots to our flight instructors, everyone at PRP Aviation shares a passion for excellence and safety.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership & Pilots -->
+    <section class="services" style="padding-top: 2rem;">
+        <div class="container">
+            <h2 class="reveal" style="margin-bottom: 2rem;">Leadership & Charter Pilots</h2>
+
+            <div class="team-grid">
+                <div class="team-card reveal">
+                    <div class="team-image">
+                        <img src="../images/team-row1.png" alt="Chris Gus Prusak" >
+                    </div>
+                    <div class="team-info">
+                        <h3>Chris "Gus" Prusak</h3>
+                        <span class="team-role">Director of Operations & CEO</span>
+                        <p>Leading PRP Aviation with a passion for excellence in flight training and charter operations.</p>
+                        <div class="team-certs">
+                            <span class="team-cert">MEI</span>
+                            <span class="team-cert">CSIP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card reveal">
+                    <div class="team-image">
+                        <img src="../images/team-row1.png" alt="Anthony Sweeney" >
+                    </div>
+                    <div class="team-info">
+                        <h3>Anthony Sweeney</h3>
+                        <span class="team-role">Chief Pilot</span>
+                        <p>Experienced chief pilot ensuring the highest standards in all flight operations.</p>
+                        <div class="team-certs">
+                            <span class="team-cert">CFII</span>
+                            <span class="team-cert">MEI</span>
+                            <span class="team-cert">TCI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card reveal">
+                    <div class="team-image">
+                        <img src="../images/team-row1.png" alt="Bobby BJ Kirby" >
+                    </div>
+                    <div class="team-info">
+                        <h3>Bobby "BJ" Kirby</h3>
+                        <span class="team-role">Charter Pilot</span>
+                        <p>Skilled charter pilot with maintenance expertise, providing safe and reliable flights.</p>
+                        <div class="team-certs">
+                            <span class="team-cert">CMEI</span>
+                            <span class="team-cert">A&P</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card reveal">
+                    <div class="team-image">
+                        <img src="../images/team-row1.png" alt="Michael Wham George" >
+                    </div>
+                    <div class="team-info">
+                        <h3>Michael "Wham" George</h3>
+                        <span class="team-role">Charter Pilot & Flight Instructor</span>
+                        <p>Dual role as charter pilot and certified flight instructor.</p>
+                        <div class="team-certs">
+                            <span class="team-cert">CFII</span>
+                            <span class="team-cert">TCI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flight Instructors -->
+    <section class="fleet" style="background: var(--dark-gray);">
+        <div class="container">
+            <h2 class="reveal" style="margin-bottom: 2rem;">Flight Instructors</h2>
+
+            <div class="team-grid">
+                <div class="team-card reveal">
+                    <div class="team-image">
+                        <img src="../images/team-row2.png" alt="Jack Dary" >
+                    </div>
+                    <div class="team-info">
+                        <h3>Jack Dary</h3>
+                        <span class="team-role">Charter Pilot & Flight Instructor</span>
+                        <p>Experienced instructor helping students achieve their aviation goals.</p>
+                        <div class="team-certs">
+                            <span class="team-cert">CFII</span>
+                            <span class="team-cert">MEI</span>
+                            <span class="team-cert">TCI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card reveal">
+                    <div class="team-image">
+                        <img src="../images/team-row2.png" alt="Michael Mo Hare" >
+                    </div>
+                    <div class="team-info">
+                        <h3>Michael "Mo" Hare</h3>
+                        <span class="team-role">Flight Instructor</span>
+                        <p>ATP-certified instructor with extensive teaching credentials.</p>
+                        <div class="team-certs">
+                            <span class="team-cert">ATP</span>
+                            <span class="team-cert">CFII</span>
+                            <span class="team-cert">MEI</span>
+                            <span class="team-cert">AGI</span>
+                            <span class="team-cert">IGI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card reveal">
+                    <div class="team-image">
+                        <img src="../images/team-row2.png" alt="Jason Stewart" >
+                    </div>
+                    <div class="team-info">
+                        <h3>Jason Stewart</h3>
+                        <span class="team-role">Flight Instructor</span>
+                        <p>Dedicated instructor with multi-engine and single-engine expertise.</p>
+                        <div class="team-certs">
+                            <span class="team-cert">CSEL</span>
+                            <span class="team-cert">CMEL</span>
+                            <span class="team-cert">CFI</span>
+                            <span class="team-cert">TCI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card reveal">
+                    <div class="team-image">
+                        <img src="../images/team-row2.png" alt="Austin Fields" >
+                    </div>
+                    <div class="team-info">
+                        <h3>Austin Fields</h3>
+                        <span class="team-role">Flight Instructor</span>
+                        <p>Passionate about helping new pilots develop their skills safely.</p>
+                        <div class="team-certs">
+                            <span class="team-cert">CSEL</span>
+                            <span class="team-cert">CMEL</span>
+                            <span class="team-cert">CFI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Our Team -->
+    <section class="quote-section">
+        <div class="container">
+            <div class="section-header reveal" style="margin-bottom: 2rem;">
+                <h2>Join Our Team</h2>
+                <p>We're always looking for talented aviation professionals who share our passion for excellence. Check out our current openings or send us your resume.</p>
+                <a href="contact.html" class="btn btn-primary btn-large" style="margin-top: 2rem;">View Careers</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="../images/prp-logo.png" alt="PRP Aviation">
+                    <p>Personal. Reliable. Professional. Your trusted partner for all aviation services.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="charter.html">Charter Flights</a></li>
+                        <li><a href="flight-school.html">Flight School</a></li>
+                        <li><a href="maintenance.html">Aircraft Maintenance</a></li>
+                        <li><a href="avionics.html">Avionics Repair</a></li>
+                        <li><a href="rental.html">Aircraft Rental</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="fleet.html">Our Fleet</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-info-bar">
+                <span>KOCF - Ocala, FL</span>
+                <span class="divider">|</span>
+                <span>KPIE - Clearwater, FL</span>
+                <span class="divider">|</span>
+                <span><a href="tel:+13525177075">(352) 517-7075</a></span>
+                <span class="divider">|</span>
+                <span><a href="mailto:customerservice@prpaviation.com">customerservice@prpaviation.com</a></span>
+                <span class="divider">|</span>
+                <span>Mon-Fri 8am-4:30pm | Sat-Sun By Appt</span>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PRP Aviation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
