@@ -1856,6 +1856,28 @@ a:hover {
     filter: brightness(0) invert(1);
 }
 
+.footer-logos {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.footer-logos img {
+    margin-bottom: 0;
+}
+
+.footer-logo-prp {
+    height: 70px;
+    filter: brightness(0) invert(1);
+}
+
+.footer-logo-cirrus {
+    height: 60px;
+    filter: none;
+}
+
 .footer-brand p {
     color: rgba(255,255,255,0.7);
     max-width: 300px;
