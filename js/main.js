@@ -23,9 +23,13 @@ function initPreloader() {
 
     // Add preloader to body if not exists
     if (!preloader) {
+        // Detect if we're in a subdirectory (pages folder)
+        const isSubPage = window.location.pathname.includes('/pages/');
+        const logoPath = isSubPage ? '../images/prp-logo.png' : 'images/prp-logo.png';
+
         const preloaderHTML = `
             <div class="preloader">
-                <img src="images/prp-logo.png" alt="Loading..." class="preloader-logo">
+                <img src="${logoPath}" alt="Loading..." class="preloader-logo">
                 <div class="preloader-bar"></div>
             </div>
         `;
