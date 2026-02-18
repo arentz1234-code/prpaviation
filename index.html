@@ -105,249 +105,322 @@
     </section>
 
     <!-- Services Section -->
-    <section class="services-new" id="services">
+    <section class="services-graphic" id="services">
         <div class="container">
             <div class="section-header reveal">
                 <span class="subtitle">What We Offer</span>
                 <h2>Our Services</h2>
-                <p>Comprehensive aviation solutions tailored to your needs</p>
             </div>
 
-            <div class="services-showcase">
-                <!-- Main Services - Top Row -->
-                <div class="service-main-grid">
-                    <a href="pages/charter.html" class="service-box service-charter reveal">
-                        <div class="service-box-bg"></div>
-                        <div class="service-box-content">
-                            <div class="service-icon-circle">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/>
-                                </svg>
-                            </div>
-                            <h3>Charter Flights</h3>
-                            <p>Luxury private air travel with our premium Cirrus fleet</p>
-                            <span class="service-cta">Book Now <span>&rarr;</span></span>
-                        </div>
-                        <img src="images/vision-jet.jpg" alt="Charter Flights" class="service-box-image">
-                    </a>
+            <div class="services-bento">
+                <!-- Charter - Large Left -->
+                <a href="pages/charter.html" class="bento-card bento-large charter-card reveal">
+                    <div class="bento-glow"></div>
+                    <div class="bento-icon">
+                        <svg viewBox="0 0 64 64" fill="none">
+                            <circle cx="32" cy="32" r="30" stroke="url(#charterGrad)" stroke-width="2" opacity="0.3"/>
+                            <path d="M52 30H44L38 18C37.5 17 36.5 16.5 35.5 16.5H33C31.5 16.5 30.5 18 30.5 19.5L32 30H22L19 25H14L16.5 32L14 39H19L22 34H32L30.5 44.5C30.5 46 31.5 47.5 33 47.5H35.5C36.5 47.5 37.5 47 38 46L44 34H52C55 34 57 32 57 32C57 32 55 30 52 30Z" fill="url(#charterGrad)"/>
+                            <defs>
+                                <linearGradient id="charterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#b87333"/>
+                                    <stop offset="100%" style="stop-color:#d4a574"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="bento-content">
+                        <span class="bento-label">Premium</span>
+                        <h3>Charter Flights</h3>
+                        <p>Private air travel on your schedule with our Cirrus fleet</p>
+                    </div>
+                    <div class="bento-arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                    <div class="bento-pattern"></div>
+                </a>
 
-                    <a href="pages/flight-school.html" class="service-box service-training reveal">
-                        <div class="service-box-bg"></div>
-                        <div class="service-box-content">
-                            <div class="service-icon-circle">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-                                    <path d="M6 12v5c3 3 9 3 12 0v-5"/>
-                                </svg>
-                            </div>
-                            <h3>Flight Training</h3>
-                            <p>From discovery flights to ATP certification</p>
-                            <span class="service-cta">Start Training <span>&rarr;</span></span>
-                        </div>
-                        <img src="images/sr22-g6.png" alt="Flight Training" class="service-box-image">
-                    </a>
-                </div>
+                <!-- Training - Top Right -->
+                <a href="pages/flight-school.html" class="bento-card bento-medium training-card reveal">
+                    <div class="bento-glow"></div>
+                    <div class="bento-icon">
+                        <svg viewBox="0 0 64 64" fill="none">
+                            <path d="M32 12L8 24L32 36L56 24L32 12Z" fill="url(#trainGrad)" opacity="0.3"/>
+                            <path d="M32 12L8 24L32 36L56 24L32 12Z" stroke="url(#trainGrad)" stroke-width="2"/>
+                            <path d="M16 28V42C16 42 24 48 32 48C40 48 48 42 48 42V28" stroke="url(#trainGrad)" stroke-width="2"/>
+                            <path d="M56 24V38" stroke="url(#trainGrad)" stroke-width="2"/>
+                            <circle cx="56" cy="40" r="3" fill="url(#trainGrad)"/>
+                            <defs>
+                                <linearGradient id="trainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#3498db"/>
+                                    <stop offset="100%" style="stop-color:#5dade2"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="bento-content">
+                        <span class="bento-label">Learn to Fly</span>
+                        <h3>Flight Training</h3>
+                        <p>Private to ATP certification</p>
+                    </div>
+                    <div class="bento-arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                </a>
 
-                <!-- Secondary Services - Bottom Row -->
-                <div class="service-secondary-grid">
-                    <a href="pages/maintenance.html" class="service-card-new reveal">
-                        <div class="service-card-icon" style="background: linear-gradient(135deg, #e74c3c, #c0392b);">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-                            </svg>
-                        </div>
-                        <div class="service-card-content">
-                            <h4>Maintenance</h4>
-                            <p>FAA-certified, Cirrus authorized</p>
-                        </div>
-                        <span class="service-arrow">&rarr;</span>
-                    </a>
+                <!-- Maintenance - Bottom Right Top -->
+                <a href="pages/maintenance.html" class="bento-card bento-small maint-card reveal">
+                    <div class="bento-icon-small">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="url(#maintGrad)" stroke-width="2">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                            <defs>
+                                <linearGradient id="maintGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#e74c3c"/>
+                                    <stop offset="100%" style="stop-color:#f39c12"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h4>Maintenance</h4>
+                    <span class="bento-mini-arrow">&rarr;</span>
+                </a>
 
-                    <a href="pages/avionics.html" class="service-card-new reveal">
-                        <div class="service-card-icon" style="background: linear-gradient(135deg, #3498db, #2980b9);">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-                                <line x1="8" y1="21" x2="16" y2="21"/>
-                                <line x1="12" y1="17" x2="12" y2="21"/>
-                            </svg>
-                        </div>
-                        <div class="service-card-content">
-                            <h4>Avionics</h4>
-                            <p>Garmin authorized dealer</p>
-                        </div>
-                        <span class="service-arrow">&rarr;</span>
-                    </a>
+                <!-- Avionics -->
+                <a href="pages/avionics.html" class="bento-card bento-small avionics-card reveal">
+                    <div class="bento-icon-small">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="url(#avioGrad)" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2"/>
+                            <path d="M8 21h8M12 17v4"/>
+                            <defs>
+                                <linearGradient id="avioGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#9b59b6"/>
+                                    <stop offset="100%" style="stop-color:#3498db"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h4>Avionics</h4>
+                    <span class="bento-mini-arrow">&rarr;</span>
+                </a>
 
-                    <a href="pages/rental.html" class="service-card-new reveal">
-                        <div class="service-card-icon" style="background: linear-gradient(135deg, #27ae60, #1e8449);">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/>
-                            </svg>
-                        </div>
-                        <div class="service-card-content">
-                            <h4>Aircraft Rental</h4>
-                            <p>SR-20 & SR-22 available</p>
-                        </div>
-                        <span class="service-arrow">&rarr;</span>
-                    </a>
-                </div>
+                <!-- Rental -->
+                <a href="pages/rental.html" class="bento-card bento-small rental-card reveal">
+                    <div class="bento-icon-small">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="url(#rentGrad)" stroke-width="2">
+                            <circle cx="7.5" cy="7.5" r="5.5"/>
+                            <path d="M11.5 11.5L22 22"/>
+                            <path d="M17 17l2.5 2.5M19.5 17l-2.5 2.5"/>
+                            <defs>
+                                <linearGradient id="rentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#27ae60"/>
+                                    <stop offset="100%" style="stop-color:#2ecc71"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h4>Rental</h4>
+                    <span class="bento-mini-arrow">&rarr;</span>
+                </a>
             </div>
+        </div>
+
+        <!-- Transition Wave -->
+        <div class="section-wave">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,90 1440,60 L1440,120 L0,120 Z" fill="#1a1a2e"/>
+            </svg>
         </div>
     </section>
 
     <style>
-        .services-new {
-            padding: 6rem 0;
-            background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
-        }
-        .services-showcase {
-            margin-top: 3rem;
-        }
-        .service-main-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-        .service-box {
+        .services-graphic {
+            padding: 6rem 0 0;
+            background: linear-gradient(180deg, #f8f9fa 0%, #eef2f7 100%);
             position: relative;
-            height: 320px;
-            border-radius: 24px;
-            overflow: hidden;
-            display: flex;
-            align-items: flex-end;
-            text-decoration: none;
-            transition: all 0.4s ease;
         }
-        .service-box:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
-        }
-        .service-box-image {
+        .section-wave {
             position: absolute;
-            inset: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            overflow: hidden;
+        }
+        .section-wave svg {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
         }
-        .service-box:hover .service-box-image {
-            transform: scale(1.1);
+        .services-bento {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr 0.8fr;
+            grid-template-rows: auto auto;
+            gap: 1.25rem;
+            margin-top: 3rem;
+            padding-bottom: 6rem;
         }
-        .service-box-bg {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%);
-            z-index: 1;
-        }
-        .service-box-content {
-            position: relative;
-            z-index: 2;
+        .bento-card {
+            background: white;
+            border-radius: 20px;
             padding: 2rem;
-            width: 100%;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(0,0,0,0.06);
         }
-        .service-icon-circle {
-            width: 50px;
-            height: 50px;
+        .bento-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+        .bento-glow {
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(184,115,51,0.1) 0%, transparent 70%);
+            transition: all 0.5s ease;
+        }
+        .bento-card:hover .bento-glow {
+            transform: scale(1.5);
+            opacity: 0.8;
+        }
+        .bento-pattern {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 150px;
+            height: 150px;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23b87333' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+        .bento-large {
+            grid-row: span 2;
+            min-height: 340px;
+            display: flex;
+            flex-direction: column;
+        }
+        .bento-medium {
+            min-height: 160px;
+        }
+        .bento-small {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.25rem 1.5rem;
+            min-height: auto;
+        }
+        .bento-icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1.5rem;
+        }
+        .bento-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+        .bento-icon-small {
+            width: 40px;
+            height: 40px;
+            flex-shrink: 0;
+        }
+        .bento-icon-small svg {
+            width: 100%;
+            height: 100%;
+        }
+        .bento-content {
+            position: relative;
+            z-index: 1;
+            flex: 1;
+        }
+        .bento-label {
+            display: inline-block;
+            background: var(--gradient-copper);
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 0.35rem 0.75rem;
+            border-radius: 50px;
+            margin-bottom: 1rem;
+        }
+        .training-card .bento-label {
+            background: linear-gradient(135deg, #3498db, #5dade2);
+        }
+        .bento-card h3 {
+            color: var(--silver-light);
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+        .bento-card h4 {
+            color: var(--silver-light);
+            font-size: 1rem;
+            margin: 0;
+            flex: 1;
+        }
+        .bento-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+        .bento-arrow {
+            position: absolute;
+            bottom: 2rem;
+            right: 2rem;
+            width: 44px;
+            height: 44px;
             background: var(--gradient-copper);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1rem;
-        }
-        .service-icon-circle svg {
-            width: 24px;
-            height: 24px;
-            color: white;
-        }
-        .service-box h3 {
-            color: white;
-            font-size: 1.75rem;
-            margin-bottom: 0.5rem;
-        }
-        .service-box p {
-            color: rgba(255,255,255,0.8);
-            font-size: 1rem;
-            margin-bottom: 1rem;
-        }
-        .service-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--copper-light);
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
-        .service-cta span {
             transition: transform 0.3s ease;
         }
-        .service-box:hover .service-cta span {
-            transform: translateX(5px);
+        .training-card .bento-arrow {
+            background: linear-gradient(135deg, #3498db, #5dade2);
         }
-        .service-secondary-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-        }
-        .service-card-new {
-            display: flex;
-            align-items: center;
-            gap: 1.25rem;
-            padding: 1.5rem;
-            background: white;
-            border-radius: 16px;
-            text-decoration: none;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-        .service-card-new:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
-        }
-        .service-card-icon {
-            width: 56px;
-            height: 56px;
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-        .service-card-icon svg {
-            width: 26px;
-            height: 26px;
+        .bento-arrow svg {
+            width: 20px;
+            height: 20px;
             color: white;
         }
-        .service-card-content {
-            flex: 1;
+        .bento-card:hover .bento-arrow {
+            transform: translateX(5px);
         }
-        .service-card-content h4 {
-            color: var(--silver-light);
-            font-size: 1.1rem;
-            margin-bottom: 0.25rem;
-        }
-        .service-card-content p {
-            color: var(--text-gray);
-            font-size: 0.85rem;
-            margin: 0;
-        }
-        .service-arrow {
+        .bento-mini-arrow {
             color: var(--copper);
             font-size: 1.25rem;
             font-weight: 600;
             transition: transform 0.3s ease;
         }
-        .service-card-new:hover .service-arrow {
+        .bento-card:hover .bento-mini-arrow {
             transform: translateX(5px);
         }
+        .maint-card:hover { border-color: #e74c3c; }
+        .avionics-card:hover { border-color: #9b59b6; }
+        .rental-card:hover { border-color: #27ae60; }
+
         @media (max-width: 992px) {
-            .service-main-grid {
+            .services-bento {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto;
+            }
+            .bento-large {
+                grid-column: span 2;
+                grid-row: span 1;
+                min-height: 280px;
+            }
+            .bento-medium {
+                grid-column: span 2;
+            }
+        }
+        @media (max-width: 576px) {
+            .services-bento {
                 grid-template-columns: 1fr;
             }
-            .service-secondary-grid {
-                grid-template-columns: 1fr;
+            .bento-large, .bento-medium {
+                grid-column: span 1;
             }
         }
     </style>
